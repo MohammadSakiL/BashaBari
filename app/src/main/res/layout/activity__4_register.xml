@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:id="@+id/page_layout_3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--    <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Owner Registration"
+                    android:textAlignment="center"
+                    android:paddingTop="25sp"
+                    android:paddingBottom="25sp"
+                    android:textSize="40sp"
+                    android:textColor="@color/colorWhite"
+                    android:fontFamily="cursive"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimaryPink"/>
+
+
+
+
+
+            </RelativeLayout>-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="25sp"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Name:"
+                    android:textColor="@color/colorBlack"/>
+                <EditText
+                    android:id="@+id/edtName4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="Example"
+
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Address:"
+                    android:textColor="@color/colorBlack"/>
+
+
+                <EditText
+                    android:id="@+id/edtAdress4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="type your full address" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="NID no."
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/edtNid4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="1998XXX" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Phone Number"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/edtPhoneNumber4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="018XXXXXXXX" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="Password:"
+                    android:textColor="@color/colorBlack"/>
+
+                <EditText
+                    android:id="@+id/edtPassword4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text_background"
+                    android:hint="******" />
+
+                <Button
+                    android:id="@+id/btnSignup4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Signup"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/button_background"
+                    android:textColor="@color/colorWhite"
+
+                    />
+                <TextView
+                    android:id="@+id/txtBackToLogin4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Back to login Page"
+                    android:textSize="25sp"
+                    android:layout_marginLeft="70sp"
+                    android:fontFamily="sans-serif"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimaryPink"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

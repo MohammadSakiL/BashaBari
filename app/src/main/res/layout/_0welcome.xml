@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/welcome"
+    tools:context="._0Welcome"
+    android:padding="35sp">
+
+    <TextView
+        android:id="@+id/txtWelcome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
+        android:paddingTop="50sp"
+        android:text="WELCOME"
+        android:textStyle="bold"
+        android:textColor="#F8F4F4"
+        android:textSize="70sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtWelcome"
+        android:fontFamily="casual"
+        android:text="All information of your residence in one place"
+        android:textColor="#F1E8E8"
+        android:textSize="30sp"
+        />
+
+    <ImageView
+        android:id="@+id/imgNextArrow1"
+        android:layout_width="76dp"
+        android:layout_height="107dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/next" />
+
+
+</RelativeLayout>
