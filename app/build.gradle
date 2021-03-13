@@ -49,6 +49,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-database'
 
 
+    //Fancy Toast
+    implementation 'com.github.Shashank02051997:FancyToast-Android:0.1.8'
+
+
 
     //For Swipe Refresh Layout
 

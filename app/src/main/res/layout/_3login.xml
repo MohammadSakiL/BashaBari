@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:id="@+id/page_layout_4">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_layout_3"
+    tools:context="._3Login">
 
     
     <LinearLayout
@@ -48,7 +49,7 @@
         >
 
         <EditText
-            android:id="@+id/edtPhoneNumber"
+            android:id="@+id/edtPhoneNumber3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -60,7 +61,7 @@
             />
 
         <EditText
-            android:id="@+id/edtLoginPassword"
+            android:id="@+id/edtPassword3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"
@@ -70,7 +71,7 @@
             android:inputType="textPassword"/>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnLogin3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
@@ -83,7 +84,7 @@
 
 
         <CheckBox
-            android:id="@+id/login_as_owner_3"
+            android:id="@+id/loginAsOwner3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Login as home owner"
