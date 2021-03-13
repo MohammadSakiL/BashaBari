@@ -17,6 +17,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 
 public class _4Register extends AppCompatActivity {
@@ -104,7 +105,9 @@ public class _4Register extends AppCompatActivity {
                         ownerInfo userInfo = new ownerInfo(address,name,nid_no,password,phone_no);
                         ownerReference.child(phone_no).setValue(userInfo);
 
-                        Toast.makeText(_4Register.this,"Successfully Registered",Toast.LENGTH_LONG).show();
+
+                        FancyToast.makeText(_4Register.this,"Successfully Registered",Toast.LENGTH_LONG,FancyToast.INFO,true).show();
+
                         Intent intent = new Intent(_4Register.this,_3Login.class);
                         startActivity(intent);
                     }
