@@ -10,7 +10,7 @@
         android:id="@+id/main_menu_layout_11right"
         >
 
-        <!--::::::::::::::::::::::::::Menu Screen::::::::::::::::::::::::::-->
+
         <LinearLayout
             android:id="@+id/main_menu_layout_11"
             android:layout_width="400sp"
@@ -55,25 +55,7 @@
                 android:padding="20sp"
                 android:text="Tenant List"
                 android:textSize="35sp" />
-            <!--
-                        <TextView
-                            android:id="@+id/send_bills_btn_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/futura_md_bt"
-                            android:padding="20sp"
-                            android:text="Send Bills"
-                            android:textSize="35sp" />
 
-                        <TextView
-                            android:id="@+id/settings_btn_11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/futura_md_bt"
-                            android:padding="20sp"
-                            android:text="Settings"
-                            android:textSize="35sp" />
-                            -->
 
             <TextView
                 android:id="@+id/signout_11"
@@ -87,7 +69,7 @@
 
         </LinearLayout>
 
-        <!--::::::::::::::::::::::::::Home Screen::::::::::::::::::::::::::-->
+
         <RelativeLayout
 
             android:id="@+id/home_layout_11"
@@ -96,14 +78,14 @@
             android:padding="35sp"
             android:background="@drawable/owner_menu"
             android:visibility="visible">
-            <!--::::::::::::::::::::::::::Menu Button::::::::::::::::::::::::::-->
+
             <ImageView
                 android:id="@+id/menu_btn_11"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/menu_btn" />
 
-            <!--::::::::::::::::::::::::::Owner text:::::::::::::::::::::::::::-->
+
             <ImageView
                 android:id="@+id/owner_profile_pic"
                 android:layout_width="100sp"
@@ -114,7 +96,7 @@
                 android:layout_marginBottom="15sp"
                 />
 
-            <!--:::::::::::::::::::::::::::Profile picture;:::::::::::::::::::::-->
+
             <TextView
                 android:id="@+id/ownertext"
                 android:layout_width="wrap_content"
@@ -127,19 +109,7 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="30sp" />
 
-            <!--:::::::::::::::::::::::::::::Address:::::::::::::::::::::::::::::-->
-           <!-- <ImageView
-                android:id="@+id/see_more_btn_11"
-                android:layout_width="150dp"
-                android:layout_height="60dp"
-                android:layout_below="@+id/request_recyclerview_11"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="20sp"
-                android:layout_marginRight="10sp"
-                android:src="@drawable/see_more_btn" />
-            -->
 
-            <!--:::::::::::::::::::::::::::::info in home:::::::::::::::::::::::::::::-->
 
             <Button
                 android:id="@+id/see_more_btn_11"
@@ -162,77 +132,9 @@
                 android:layout_height="10sp"
                 android:layout_below="@+id/addressTitle_11"
                 android:background="@color/colorPrimaryDark" />
-            <!--.........................................................................................
-            <ImageView
-                android:id="@+id/info_bg"
-                android:layout_width="match_parent"
-                android:layout_height="100sp"
-                android:layout_below="@+id/addressTitle_11"
-                android:src="@drawable/home_info_bg" />
-            <LinearLayout
-                android:id="@+id/info_nos"
-                android:layout_width="match_parent"
-                android:layout_height="50sp"
-                android:layout_below="@+id/addressTitle_11"
-                android:gravity="center_horizontal"
-                android:paddingTop="10sp">
-
-                <TextView
-                    android:id="@+id/due_bills_no"
-                    android:layout_width="170sp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameTitle_11"
-                    android:fontFamily="@font/microsoft_himalaya"
-                    android:gravity="center_horizontal"
-                    android:text="3"
-                    android:textSize="45sp" />
-
-                <TextView
-                    android:id="@+id/notice_no"
-                    android:layout_width="170sp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameTitle_11"
-                    android:fontFamily="@font/microsoft_himalaya"
-                    android:gravity="center_horizontal"
-                    android:text="38"
-                    android:textSize="45sp" />
-            </LinearLayout>
 
 
 
-            <LinearLayout
-                android:id="@+id/due_notice_no"
-                android:layout_width="match_parent"
-                android:layout_height="55sp"
-                android:layout_below="@+id/info_nos"
-                android:gravity="center_horizontal">
-
-                <TextView
-                    android:id="@+id/due_bill_text"
-                    android:layout_width="170sp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameTitle_11"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/futura_md_bt"
-                    android:gravity="center_horizontal"
-                    android:text="Tenants"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:id="@+id/notice_text"
-                    android:layout_width="170sp"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/nameTitle_11"
-                    android:layout_centerHorizontal="true"
-                    android:fontFamily="@font/futura_md_bt"
-                    android:gravity="center_horizontal"
-                    android:text="Requests"
-                    android:textSize="20sp" />
-            </LinearLayout>
-
-            .................................................................................................-->
-
-            <!--:::::::::::::::::::::recent request text::::::::::::::::::::::::-->
             <TextView
                 android:id="@+id/nameTitle_11"
                 android:layout_width="wrap_content"
@@ -244,7 +146,8 @@
                 android:text="Owner Menu"
                 android:textColor="@color/colorWhite"
                 android:textSize="30sp" />
-            <!--:::::::::::::::::::::request background::::::::::::::::::::::::-->
+
+
             <TextView
                 android:id="@+id/addressTitle_11"
                 android:layout_width="wrap_content"
@@ -268,7 +171,7 @@
                 android:textColor="@color/colorWhite"
                 android:textSize="28sp" />
 
-            <!--:::::::::::::::::::::request contents::::::::::::::::::::::::-->
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/request_recyclerview_11"
                 android:layout_width="320dp"
