@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._5OwnerMenu"></activity>
+        <activity android:name="._6_user_menu"></activity>
+        <activity android:name="._5OwnerMenu" />
         <activity android:name="._4Register" />
         <activity android:name="._3Login" />
         <activity android:name="._1Welcome" />

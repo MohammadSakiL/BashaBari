@@ -27,7 +27,7 @@
                     android:textColor="@color/colorWhite"
                     android:fontFamily="cursive"
                     android:textStyle="bold"
-                    android:background="@color/colorPrimaryPink"/>
+                    
 
 
 
