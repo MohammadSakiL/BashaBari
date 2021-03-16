@@ -93,7 +93,7 @@ public class _3Login extends AppCompatActivity {
                         ownerInfo userInfo = snapshot.getValue(ownerInfo.class);
                         if(getPhone_no.equals(userInfo.getPhone_no()) && getPassword.equals(userInfo.getPassword())){
                             FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
-                            Intent intent = new Intent(_3Login.this,_5OwnerMenu.class);
+                            Intent intent = new Intent(_3Login.this, _5OwnerMenu.class);
                             startActivity(intent);
                         }
                         else {
@@ -101,7 +101,8 @@ public class _3Login extends AppCompatActivity {
 
                         }
                     }catch (Exception e){
-                        FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        //FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        e.printStackTrace();
 
                     }
                 }

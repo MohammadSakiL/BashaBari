@@ -95,11 +95,11 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="69sp"
+            android:layout_gravity="center"
             android:fontFamily="cursive"
-            android:gravity="center_horizontal"
             android:padding="10sp"
             android:text="Don't have an account?"
+            android:textAlignment="center"
             android:textColor="@color/colorBlack"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -109,14 +109,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/qstn"
-            android:layout_marginLeft="150sp"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-black"
-            android:gravity="center_horizontal"
+
             android:text="Register "
+            android:textAlignment="center"
             android:textColor="@color/colorPrimaryPink"
             android:textSize="25sp" />
-
-
 
 
     </LinearLayout>

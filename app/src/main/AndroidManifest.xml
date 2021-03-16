@@ -13,7 +13,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._6_user_menu"></activity>
+        <activity android:name="._10_More_Requests"></activity>
+        <activity android:name="._9_Manage_Tenants" />
+        <activity android:name="._8_Notices" />
+        <activity android:name="._7_Register_Tenants" />
+        <activity android:name="._6_User_menu" />
         <activity android:name="._5OwnerMenu" />
         <activity android:name="._4Register" />
         <activity android:name="._3Login" />
