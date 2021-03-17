@@ -1,9 +1,13 @@
 package com.example.bashabari;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -41,7 +45,8 @@ public class _3Login extends AppCompatActivity {
         ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
         tenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
 
-
+         if(!isConnected(_3Login.this))
+            buildDialog(_3Login.this).show();
 
         txtRegister3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +60,8 @@ public class _3Login extends AppCompatActivity {
                 }
             }
         });
+
+
 
         btnLogin3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +91,7 @@ public class _3Login extends AppCompatActivity {
 
     }
 
+
     private void ownerLogin(final String getPhone_no, final String getPassword) {
         try {
             ownerReference.child(getPhone_no).addValueEventListener(new ValueEventListener() {
@@ -101,8 +109,8 @@ public class _3Login extends AppCompatActivity {
 
                         }
                     }catch (Exception e){
-                        //FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
-                        e.printStackTrace();
+                        FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
 
                     }
                 }
@@ -118,4 +126,32 @@ public class _3Login extends AppCompatActivity {
         }
 
     }
+    public boolean isConnected(Context context) {
+
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netinfo = cm.getActiveNetworkInfo();
+
+        if (netinfo != null && netinfo.isConnectedOrConnecting()) {
+            android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+
+            if((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting())) return true;
+            else
+                return false;
+        } else
+            return false;
+    }
+
+
+    public AlertDialog.Builder buildDialog(Context c) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(c);
+
+        builder.setTitle("No Internet Connection");
+        builder.setMessage("You need to have Mobile Data or wifi to access this.");
+
+        return builder;
+    }
+
+
 }
