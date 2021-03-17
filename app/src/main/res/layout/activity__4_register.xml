@@ -10,7 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--    <RelativeLayout
+    <!--<RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
@@ -26,12 +26,7 @@
                     android:textSize="40sp"
                     android:textColor="@color/colorWhite"
                     android:fontFamily="cursive"
-                    android:textStyle="bold"
-                    
-
-
-
-
+                    android:textStyle="bold"/>
 
             </RelativeLayout>-->
 
