@@ -84,7 +84,15 @@ public class _3Login extends AppCompatActivity {
 
                 }
                 else {
-                    FancyToast.makeText(_3Login.this,"You can only register as owner",Toast.LENGTH_LONG,FancyToast.INFO,true).show();
+                    //FancyToast.makeText(_3Login.this,"You can only register as owner",Toast.LENGTH_LONG,FancyToast.INFO,true).show();
+                    if(getPhone_no.isEmpty())
+                        edtPhoneNumber3.setError("Input your phone number");
+                    else if(getPassword.isEmpty())
+                        edtPassword3.setError("Input your password");
+                    else{
+                        //tenantLogin(getPhone_no,getPassword);
+
+                    }
                 }
             }
         });
@@ -112,6 +120,38 @@ public class _3Login extends AppCompatActivity {
         }
     }
 
+    private void tenantLogin(final String getPhone_no,final String getPassword) {
+        try{
+            tenantReference.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    try {
+                        tenantInfo userinfo = snapshot.getValue(tenantInfo.class);
+                        if(getPhone_no.equals(userinfo.getPassword()) && getPassword.equals(userinfo.getPassword())){
+                            FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_SHORT,FancyToast.SUCCESS,true).show();
+
+                            Intent intent = new Intent(_3Login.this,_6_User_menu.class);
+                            startActivity(intent);
+
+                        }else {
+                            FancyToast.makeText(_3Login.this,"Invalid phone number or password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
+                        }
+                    } catch (Exception e) {
+                        FancyToast.makeText(_3Login.this,"Invalid phone number or password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
 
     private void ownerLogin(final String getPhone_no, final String getPassword) {
         try {
@@ -130,7 +170,8 @@ public class _3Login extends AppCompatActivity {
 
                         }
                     }catch (Exception e){
-                        FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password2",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+
 
 
                     }
@@ -147,6 +188,10 @@ public class _3Login extends AppCompatActivity {
         }
 
     }
+
+
+
+
     public boolean isConnected(Context context) {
 
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
