@@ -90,7 +90,7 @@ public class _3Login extends AppCompatActivity {
                     else if(getPassword.isEmpty())
                         edtPassword3.setError("Input your password");
                     else{
-                        //tenantLogin(getPhone_no,getPassword);
+                        tenantLogin(getPhone_no,getPassword);
 
                     }
                 }
@@ -122,23 +122,23 @@ public class _3Login extends AppCompatActivity {
 
     private void tenantLogin(final String getPhone_no,final String getPassword) {
         try{
-            tenantReference.addValueEventListener(new ValueEventListener() {
+            tenantReference.child(getPhone_no).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     try {
                         tenantInfo userinfo = snapshot.getValue(tenantInfo.class);
-                        if(getPhone_no.equals(userinfo.getPassword()) && getPassword.equals(userinfo.getPassword())){
+                        if(getPhone_no.equals(userinfo.getPhone_no()) && getPassword.equals(userinfo.getPassword())){
                             FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_SHORT,FancyToast.SUCCESS,true).show();
 
                             Intent intent = new Intent(_3Login.this,_6_User_menu.class);
                             startActivity(intent);
 
                         }else {
-                            FancyToast.makeText(_3Login.this,"Invalid phone number or password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                            FancyToast.makeText(_3Login.this,"Invalid phone number or password 1",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
 
                         }
                     } catch (Exception e) {
-                        FancyToast.makeText(_3Login.this,"Invalid phone number or password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        FancyToast.makeText(_3Login.this,"Invalid phone number or password 2",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
                     }
                 }
 
