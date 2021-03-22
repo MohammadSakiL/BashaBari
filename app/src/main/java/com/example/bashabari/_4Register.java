@@ -63,9 +63,9 @@ public class _4Register extends AppCompatActivity {
 
                 if(!name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty())
                 {
-                    if(password.length() < 3)
+                    if(password.length() < 6)
                         edtPassword4.setError("Input Minimum 6 Character Password");
-                    else if(phone_no.length() < 4)
+                    else if(phone_no.length() < 11)
                         edtPhoneNumber4.setError("Invalid Phone Number");
                     else savaToDataBase(name,address,nid_no,phone_no,password);
 

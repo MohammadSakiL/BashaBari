@@ -17,7 +17,7 @@
             android:id="@+id/main_menu_layout_5"
             android:layout_width="400sp"
             android:layout_height="match_parent"
-            android:background="@drawable/menu_bg"
+            android:background="@drawable/menu"
             android:gravity="center_horizontal"
             android:orientation="vertical"
             android:visibility="gone">
@@ -25,11 +25,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/futura_md_cn_bt"
                 android:paddingTop="60sp"
                 android:paddingBottom="20sp"
                 android:text="MENU"
-                android:textSize="70sp" />
+                android:textSize="70sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="cursive"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/add_tenant_btn_5"
@@ -38,7 +40,9 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:padding="20sp"
                 android:text="Add Tenant"
-                android:textSize="35sp" />
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/notices_btn_5"
@@ -47,7 +51,9 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:padding="20sp"
                 android:text="Notices"
-                android:textSize="35sp" />
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
 
             <TextView
                 android:id="@+id/manage_tenant_btn_5"
@@ -56,7 +62,9 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:padding="20sp"
                 android:text="Tenant List"
-                android:textSize="35sp" />
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
 
 
             <TextView
@@ -66,7 +74,9 @@
                 android:fontFamily="@font/futura_md_bt"
                 android:padding="20sp"
                 android:text="Sign Out"
-                android:textSize="35sp" />
+                android:textSize="25sp"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold"/>
 
 
         </LinearLayout>
@@ -77,8 +87,8 @@
             android:id="@+id/home_layout_5"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="35sp"
             android:background="@drawable/owner_menu"
+            android:padding="35sp"
             android:visibility="visible">
 
             <ImageView
@@ -94,9 +104,8 @@
                 android:layout_height="100sp"
                 android:layout_below="@+id/ownertext"
                 android:layout_centerHorizontal="true"
-                android:src="@drawable/profile"
                 android:layout_marginBottom="15sp"
-                />
+                android:src="@drawable/profile" />
 
 
             <TextView
@@ -107,10 +116,9 @@
                 android:fontFamily="cursive"
                 android:paddingBottom="20sp"
                 android:text="BashaBari"
-                android:textStyle="bold"
                 android:textColor="@color/colorWhite"
-                android:textSize="30sp" />
-
+                android:textSize="30sp"
+                android:textStyle="bold" />
 
 
             <ImageView
@@ -131,7 +139,6 @@
                 android:background="@color/colorPrimaryDark" />
 
 
-
             <TextView
                 android:id="@+id/nameTitle_5"
                 android:layout_width="wrap_content"
@@ -150,7 +157,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameTitle_5"
-                android:layout_centerHorizontal="true"
+                android:layout_marginTop="0dp"
                 android:fontFamily="@font/futura_md_bt"
                 android:text=""
                 android:textSize="18sp" />
