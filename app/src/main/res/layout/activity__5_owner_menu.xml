@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,18 +10,18 @@
     <LinearLayout
         android:layout_width="match_parent" android:layout_height="match_parent"
         android:background="@drawable/bg"
-        android:id="@+id/main_menu_layout_5right"
+        android:id="@+id/main_layout_5"
         >
 
 
         <LinearLayout
-            android:id="@+id/main_menu_layout_5"
-            android:layout_width="400sp"
+            android:id="@+id/menu_layout_5"
+            android:layout_width="350sp"
             android:layout_height="match_parent"
             android:background="@drawable/menu"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:visibility="gone">
+            android:visibility="visible">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -34,7 +35,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/add_tenant_btn_5"
+                android:id="@+id/txtAddTenant5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futura_md_bt"
@@ -45,7 +46,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/notices_btn_5"
+                android:id="@+id/txtNotices5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futura_md_bt"
@@ -56,7 +57,7 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:id="@+id/manage_tenant_btn_5"
+                android:id="@+id/txtTenantList5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futura_md_bt"
@@ -68,7 +69,7 @@
 
 
             <TextView
-                android:id="@+id/signout_5"
+                android:id="@+id/txtSignoutOwner5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/futura_md_bt"
@@ -92,7 +93,7 @@
             android:visibility="visible">
 
             <ImageView
-                android:id="@+id/menu_btn_5"
+                android:id="@+id/btnMenu5"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/menu_btn" />
