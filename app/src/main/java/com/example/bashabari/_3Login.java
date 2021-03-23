@@ -143,6 +143,15 @@ public class _3Login extends AppCompatActivity {
                         if(getPhone_no.equals(userinfo.getPhone_no()) && getPassword.equals(userinfo.getPassword())){
                             FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_SHORT,FancyToast.SUCCESS,true).show();
 
+                            saveLoginInfoToFile(userinfo.getAddress(), userinfo.getName(), userinfo.getNid_no(), userinfo.getPassword(), userinfo.getPhone_no());
+
+                            FileOutputStream fos1 = null;
+                            try {
+                                fos1 = openFileOutput(T_Owner_File, MODE_PRIVATE);
+                                fos1.write(userinfo.getOwner().getBytes());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                             Intent intent = new Intent(_3Login.this,_6_User_menu.class);
                             startActivity(intent);
 
@@ -174,9 +183,20 @@ public class _3Login extends AppCompatActivity {
                     try {
                         ownerInfo userInfo = snapshot.getValue(ownerInfo.class);
                         if(getPhone_no.equals(userInfo.getPhone_no()) && getPassword.equals(userInfo.getPassword())){
+
+                            saveLoginInfoToFile(userInfo.getAddress(), userInfo.getName(), userInfo.getNid_no(), userInfo.getPassword(), userInfo.getPhone_no());
+
                             FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
                             Intent intent = new Intent(_3Login.this, _5OwnerMenu.class);
                             startActivity(intent);
+
+                            FileOutputStream fos0 = null;
+                            try {
+                                fos0 = openFileOutput(Stat_File, MODE_PRIVATE);
+                                fos0.write("logged_in_owner".getBytes());
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
                         }
                         else {
                             FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
@@ -222,7 +242,7 @@ public class _3Login extends AppCompatActivity {
     }
 
     public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
-        // will save data into the files
+
         FileOutputStream fos1 = null;
         try {
             fos1 = openFileOutput(Address_File, MODE_PRIVATE);
@@ -265,10 +285,6 @@ public class _3Login extends AppCompatActivity {
     }
 
 
-    public void hidekeyboard(View view) {
-        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
-        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
-    }
 
 
 

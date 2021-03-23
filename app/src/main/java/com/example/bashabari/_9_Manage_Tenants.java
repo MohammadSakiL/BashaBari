@@ -83,26 +83,9 @@ public class _9_Manage_Tenants extends AppCompatActivity {
         recycleViewItem.setLayoutManager(new LinearLayoutManager(this));
         recycleViewItem.setAdapter(adapter);
 
-        Query query = FirebaseDatabase.getInstance().getReference("Tenant Database").orderByChild("owner").equalTo("01867780751");
+        Query query = FirebaseDatabase.getInstance().getReference("Tenant Database").orderByChild("owner").equalTo(readFromFile("111pho111.txt").trim());
 
-//    query.addListenerForSingleValueEvent(new ValueEventListener() {
-//        @Override
-//        public void onDataChange(@NonNull DataSnapshot snapshot) {
-//            tenantList.clear();
-//            if(snapshot.exists()){
-//                for(DataSnapshot dataSnapshot:snapshot.getChildren()){
-//                    tenantInfo tentant = dataSnapshot.getValue(tenantInfo.class);
-//                    tenantList.add(tentant);
-//                }
-//                adapter.notifyDataSetChanged();
-//            }
-//        }
-//
-//        @Override
-//        public void onCancelled(@NonNull DatabaseError error) {
-//
-//        }
-//    });
+
 
         query.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -122,6 +105,38 @@ public class _9_Manage_Tenants extends AppCompatActivity {
 
             }
         });
+    }
+
+    private String readFromFile(String File_Name) {
+
+        String st = null;
+        FileInputStream fis0 = null;
+        try {
+            fis0 = openFileInput(File_Name);
+            InputStreamReader isr = new InputStreamReader(fis0);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while ((text = br.readLine()) != null) {
+                sb.append(text).append("\n");
+            }
+
+            st = sb.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return st;
+
     }
 
 

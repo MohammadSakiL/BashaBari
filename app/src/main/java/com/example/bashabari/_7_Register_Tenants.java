@@ -21,6 +21,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class _7_Register_Tenants extends AppCompatActivity {
 
 
@@ -112,7 +117,8 @@ public class _7_Register_Tenants extends AppCompatActivity {
     }
 
     private void saveToDatabase(final String name,final String address,final String nid_no, final String phone_no,final String password) {
-        final String owner_no = "01867780751";
+        final String owner_no;
+        owner_no = readFromFile("111pho111.txt").trim();
 
         try {
             tenantReference.child(phone_no).addValueEventListener(new ValueEventListener() {
@@ -144,6 +150,38 @@ public class _7_Register_Tenants extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+
+    }
+
+    private String readFromFile(String File_Name){
+
+        String st = null;
+        FileInputStream fis0 = null;
+        try {
+            fis0 =openFileInput(File_Name);
+            InputStreamReader isr = new InputStreamReader(fis0);
+            BufferedReader br = new BufferedReader(isr);
+            StringBuilder sb = new StringBuilder();
+            String text;
+
+            while( (text = br.readLine()) != null ){
+                sb.append(text).append("\n");
+            }
+
+            st = sb.toString();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if(fis0 != null) {
+                try {
+                    fis0.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return st;
 
     }
 }
