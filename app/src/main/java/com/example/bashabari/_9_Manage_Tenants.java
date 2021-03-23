@@ -87,7 +87,25 @@ public class _9_Manage_Tenants extends AppCompatActivity {
 
 
 
-        query.addListenerForSingleValueEvent(new ValueEventListener() {
+//        query.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+//                tenantList.clear();
+//                if (dataSnapshot.exists()) {
+//                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+//                        tenantInfo ten = snapshot.getValue(tenantInfo.class);
+//                        tenantList.add(ten);
+//                    }
+//                    adapter.notifyDataSetChanged();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError databaseError) {
+//
+//            }
+//        });
+        query.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 tenantList.clear();
@@ -101,7 +119,7 @@ public class _9_Manage_Tenants extends AppCompatActivity {
             }
 
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
