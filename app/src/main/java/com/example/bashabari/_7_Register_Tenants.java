@@ -23,7 +23,9 @@ import com.shashank.sony.fancytoastlib.FancyToast;
 
 public class _7_Register_Tenants extends AppCompatActivity {
 
+
     private DatabaseReference tenantReference;
+    private DatabaseReference ownerReference;
 
     private EditText edtName,edtFlat,edtNid,edtPhoneNumber,edtPassword;
     private Button btnAddTenants;
@@ -35,6 +37,7 @@ public class _7_Register_Tenants extends AppCompatActivity {
         setContentView(R.layout.activity__7__register__tenants);
 
         tenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
+        ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
 
         edtName = findViewById(R.id.edtName7);
         edtFlat = findViewById(R.id.edtFlat7);
@@ -65,9 +68,9 @@ public class _7_Register_Tenants extends AppCompatActivity {
 
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
 
-                    if(password.length()<6)
+                    if(password.length()<3)
                         edtPassword.setError("Input minimum 6 character password");
-                    else if(phone_no.length() != 11)
+                    else if(phone_no.length() != 3)
                         edtPhoneNumber.setError("Invalid phone number");
                     else
                         saveToDatabase(name, address, nid_no, phone_no, password);
@@ -109,7 +112,7 @@ public class _7_Register_Tenants extends AppCompatActivity {
     }
 
     private void saveToDatabase(final String name,final String address,final String nid_no, final String phone_no,final String password) {
-        final String owner_no = "01867780753";
+        final String owner_no = "01867780751";
 
         try {
             tenantReference.child(phone_no).addValueEventListener(new ValueEventListener() {
@@ -141,8 +144,6 @@ public class _7_Register_Tenants extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
-
-
 
     }
 }

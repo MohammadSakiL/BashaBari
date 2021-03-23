@@ -78,6 +78,14 @@ public class _5OwnerMenu extends AppCompatActivity {
             }
         });
 
+        txtSignoutOwner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(_5OwnerMenu.this,_3Login.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
