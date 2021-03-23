@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -12,6 +13,7 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -25,7 +27,18 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
 
+import java.io.FileOutputStream;
+
 public class _3Login extends AppCompatActivity {
+
+
+    public static final String Stat_File = "111sta111.txt";
+    public static final String Address_File = "111add111.txt";
+    public static final String Name_File = "111nam111.txt";
+    public static final String Nid_File = "111nid111.txt";
+    public static final String Password_File = "111pas111.txt";
+    public static final String Phone_File = "111pho111.txt";
+    public static final String T_Owner_File = "111t_ow111.txt";
 
     private EditText edtPhoneNumber3,edtPassword3;
     private CheckBox loginAsOwner3;
@@ -207,6 +220,56 @@ public class _3Login extends AppCompatActivity {
         } else
             return false;
     }
+
+    public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
+        // will save data into the files
+        FileOutputStream fos1 = null;
+        try {
+            fos1 = openFileOutput(Address_File, MODE_PRIVATE);
+            fos1.write(address.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos2 = null;
+        try {
+            fos2 = openFileOutput(Name_File, MODE_PRIVATE);
+            fos2.write(name.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos3 = null;
+        try {
+            fos3 = openFileOutput(Nid_File, MODE_PRIVATE);
+            fos3.write(nid_no.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos4 = null;
+        try {
+            fos4 = openFileOutput(Password_File, MODE_PRIVATE);
+            fos4.write(password.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        FileOutputStream fos5 = null;
+        try {
+            fos5 = openFileOutput(Phone_File, MODE_PRIVATE);
+            fos5.write(phone_no.getBytes());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    public void hidekeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(),0);
+    }
+
 
 
     public AlertDialog.Builder buildDialog(Context c) {
