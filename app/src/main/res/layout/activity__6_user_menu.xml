@@ -1,14 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/page_layout_5"
     tools:context="._6_User_menu">
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Welcome"
-        android:gravity="center"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        android:id="@+id/main_layout_5"
+        >
+
+
+        <LinearLayout
+            android:id="@+id/menu_layout_5"
+            android:layout_width="350sp"
+            android:layout_height="match_parent"
+            android:background="@color/ColorMenu"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="60sp"
+                android:paddingBottom="20sp"
+                android:text="MENU"
+                android:textSize="70sp"
+                android:textColor="@color/colorPrimary"
+                android:fontFamily="@font/futura_md_cn_bt"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtAddTenant5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Requests"
+                android:textSize="25sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/txtNotices5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Notices"
+                android:textSize="25sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/txtSignoutOwner5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Sign Out"
+                android:textSize="25sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"/>
+
+
+        </LinearLayout>
+
+
+        <RelativeLayout
+
+            android:id="@+id/home_layout_5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/owner_menu"
+            android:padding="35sp"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/btnMenu5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/menu_bar" />
+
+
+            <ImageView
+                android:id="@+id/owner_profile_pic"
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:layout_below="@+id/ownertext"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="15sp"
+                android:src="@drawable/profile_pic" />
+
+
+            <TextView
+                android:id="@+id/ownertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="cursive"
+                android:paddingBottom="20sp"
+                android:text="BashaBari"
+                android:textColor="@color/colorWhite"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+
+            <ImageView
+                android:id="@+id/see_more_btn_5"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:layout_below="@+id/request_recyclerview_5"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20sp"
+                android:layout_marginRight="10sp"
+                android:src="@drawable/see_more_btn" />
+
+            <ImageView
+                android:id="@+id/info_bg"
+                android:layout_width="match_parent"
+                android:layout_height="10sp"
+                android:layout_below="@+id/addressTitle_5"
+                android:background="@color/colorPrimaryDark" />
+
+
+            <TextView
+                android:id="@+id/nameTitle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/owner_profile_pic"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/futura_md_bt"
+                android:paddingTop="20sp"
+                android:text="User Menu"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp" />
+
+
+            <TextView
+                android:id="@+id/addressTitle_5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameTitle_5"
+                android:layout_marginTop="0dp"
+                android:fontFamily="@font/futura_md_bt"
+                android:text=""
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/recentreq_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/info_bg"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/futura_md_cn_bt"
+                android:paddingTop="35sp"
+                android:paddingBottom="10dp"
+                android:text="RECENT REQUESTS"
+                android:textColor="@color/colorWhite"
+                android:textSize="28sp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/request_recyclerview_5"
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:layout_below="@+id/recentreq_text"
+                android:layout_centerHorizontal="true"
+
+
+                />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
