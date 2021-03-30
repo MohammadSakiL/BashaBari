@@ -42,7 +42,7 @@
             android:layout_below="@+id/ntctext1"
             />
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/request_recyclerview_12"
+            android:id="@+id/request_recyclerview_10"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@+id/ntctext2"

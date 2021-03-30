@@ -127,7 +127,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:paddingTop="20sp"
-                android:text="User Menu"
+                android:text="Tenant"
                 android:textColor="@color/colorWhite"
                 android:textSize="30sp" />
 

@@ -148,7 +148,8 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:paddingTop="20sp"
-                android:text="......................"
+                android:text="Owner"
+                android:textColor="@color/colorWhite"
                 android:textSize="30sp" />
 
             <TextView
@@ -181,8 +182,6 @@
                 android:layout_height="150dp"
                 android:layout_below="@+id/recentreq_text"
                 android:layout_centerHorizontal="true"
-
-
                 />
 
         </RelativeLayout>
