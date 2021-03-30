@@ -16,6 +16,7 @@ public class _5OwnerMenu extends AppCompatActivity {
     private RelativeLayout home_layout;
     private TextView txtAddTenant,txtSignoutOwner,txtTenantList,txtNotices;
     private ImageView btnMenu;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

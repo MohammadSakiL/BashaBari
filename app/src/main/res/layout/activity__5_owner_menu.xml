@@ -128,7 +128,7 @@
                 android:layout_height="100dp"
                 android:layout_below="@+id/request_recyclerview_5"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="20sp"
+                android:layout_marginTop="20dp"
                 android:layout_marginRight="10sp"
                 android:src="@drawable/see_more_btn" />
 
@@ -158,8 +158,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameTitle_5"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="20dp"
                 android:fontFamily="@font/futura_md_bt"
+                android:layout_centerHorizontal="true"
                 android:text=""
                 android:textSize="18sp" />
 

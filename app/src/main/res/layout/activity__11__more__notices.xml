@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:id="@+id/page_layout_10">
+    android:id="@+id/page_layout_11">
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent" android:layout_height="match_parent"
 
@@ -14,7 +14,7 @@
             android:layout_width="50sp"
             android:layout_height="50sp"
             android:src="@drawable/back_button"
-            android:id="@+id/back_arrow_btn_10"
+            android:id="@+id/back_arrow_btn_11"
             />
 
         <TextView
@@ -33,7 +33,7 @@
             android:id="@+id/ntctext2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Requests"
+            android:text="Notices"
             android:textSize="70sp"
             android:fontFamily="@font/futura_md_cn_bt"
             android:layout_centerHorizontal="true"

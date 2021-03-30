@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._10_More_Requests"></activity>
+        <activity android:name="._12_Requests"></activity>
+        <activity android:name="._11_More_Notices" />
+        <activity android:name="._10_More_Requests" />
         <activity android:name="._9_Manage_Tenants" />
         <activity android:name="._8_Notices" />
         <activity android:name="._7_Register_Tenants" />
