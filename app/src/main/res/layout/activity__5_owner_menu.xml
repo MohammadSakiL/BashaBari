@@ -148,20 +148,17 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:paddingTop="20sp"
-                android:text="Owner Menu"
-                android:textColor="@color/colorWhite"
+                android:text="......................"
                 android:textSize="30sp" />
-
 
             <TextView
                 android:id="@+id/addressTitle_5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/nameTitle_5"
-                android:layout_marginTop="20dp"
-                android:fontFamily="@font/futura_md_bt"
                 android:layout_centerHorizontal="true"
-                android:text=""
+                android:fontFamily="@font/futura_md_bt"
+                android:text="...................."
                 android:textSize="18sp" />
 
             <TextView
