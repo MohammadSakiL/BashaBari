@@ -193,8 +193,6 @@
                 android:layout_height="150dp"
                 android:layout_below="@+id/recentreq_text"
                 android:layout_centerHorizontal="true"
-
-
                 />
 
         </RelativeLayout>
