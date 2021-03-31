@@ -2,17 +2,24 @@ package com.example.bashabari;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -26,7 +33,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-public class _5OwnerMenu extends AppCompatActivity {
+public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private LinearLayout main_layout,menu_layout;
     private RelativeLayout home_layout;
@@ -37,6 +44,15 @@ public class _5OwnerMenu extends AppCompatActivity {
     private requestViewAdapter adapter;
     private List<requestInfo> requestList;
 
+
+
+
+
+    private DrawerLayout drawerLayout;
+    private NavigationView navigationView;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +61,31 @@ public class _5OwnerMenu extends AppCompatActivity {
         requestRecyclerView();
 
         //setContentFromDatabase();
+
+
+
+
+
+
+
+
+
+        drawerLayout = findViewById(R.id.page_layout_5);
+        navigationView = findViewById(R.id.nav_view);
+
+
+        navigationView.bringToFront();
+
+
+
+        navigationView.setNavigationItemSelectedListener(this);
+
+
+
+
+
+
+
 
 
         recyclerView = findViewById(R.id.request_recyclerview_5);
@@ -68,61 +109,14 @@ public class _5OwnerMenu extends AppCompatActivity {
         btnMenu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                menu_layout.setVisibility(View.VISIBLE);
-                home_layout.setVisibility(View.GONE);
+
+                  drawerLayout.openDrawer(Gravity.LEFT);
             }
         });
         see_more_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(_5OwnerMenu.this,_10_More_Requests.class);
-                startActivity(intent);
-            }
-        });
-
-
-
-
-
-        main_layout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (main_layout.getVisibility() == View.VISIBLE){
-                    menu_layout.setVisibility(View.GONE);
-                    home_layout.setVisibility(View.VISIBLE);
-
-                }
-            }
-        });
-
-        txtAddTenant.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(_5OwnerMenu.this,_7_Register_Tenants.class);
-                startActivity(intent);
-            }
-        });
-
-        txtNotices.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(_5OwnerMenu.this,_8_Notices.class);
-                startActivity(intent);
-            }
-        });
-
-        txtTenantList.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(_5OwnerMenu.this,_9_Manage_Tenants.class);
-                startActivity(intent);
-            }
-        });
-
-        txtSignoutOwner.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(_5OwnerMenu.this,_3Login.class);
                 startActivity(intent);
             }
         });
@@ -198,5 +192,45 @@ public class _5OwnerMenu extends AppCompatActivity {
             }
         }
         return st;
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                Intent intent = new Intent(_5OwnerMenu.this,_5OwnerMenu.class);
+                startActivity(intent);
+                break;
+            case R.id.nav_add_tenant:
+                Intent intent0 = new Intent(_5OwnerMenu.this,_7_Register_Tenants.class);
+                startActivity(intent0);
+                break;
+            case R.id.nav_notice:
+                Intent intent1 = new Intent(_5OwnerMenu.this,_8_Notices.class);
+                startActivity(intent1);
+                break;
+            case R.id.nav_manage_tenants:
+                Intent intent2 = new Intent(_5OwnerMenu.this,_9_Manage_Tenants.class);
+                startActivity(intent2);
+                break;
+            case R.id.nav_logout:
+                Intent intent3 = new Intent(_5OwnerMenu.this,_3Login.class);
+                startActivity(intent3);
+                break;
+        }
+
+
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (drawerLayout.isDrawerOpen(GravityCompat.START))
+        {
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else {
+            super.onBackPressed();
+        }
     }
 }

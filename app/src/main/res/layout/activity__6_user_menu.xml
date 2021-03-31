@@ -127,7 +127,7 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:paddingTop="20sp"
-                android:text="User Menu"
+                android:text="User"
                 android:textColor="@color/colorWhite"
                 android:textSize="30sp" />
 
@@ -157,15 +157,13 @@
                 android:textSize="28sp" />
 
 
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/request_recyclerview_5"
                 android:layout_width="320dp"
                 android:layout_height="150dp"
                 android:layout_below="@+id/recentreq_text"
-                android:layout_centerHorizontal="true"
-
-
-                />
+                android:layout_centerHorizontal="true"/>
 
         </RelativeLayout>
 

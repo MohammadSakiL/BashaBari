@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/microsoft_himalaya"
                 android:textSize="35sp"
-                android:text="Joseph Joestar"
+                android:text="Tareq"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                 android:textColor="#000000" />
 

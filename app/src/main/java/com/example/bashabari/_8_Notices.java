@@ -25,6 +25,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.shashank.sony.fancytoastlib.FancyToast;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
@@ -73,8 +74,8 @@ public class _8_Notices extends AppCompatActivity {
             public void onClick(View v) {
                 final String text_req, phone_no, name, date;
                 text_req = edit_nt_field.getText().toString().trim();
-                name = readFromFile("369nam369.txt").trim();
-                phone_no = readFromFile("369pho369.txt").trim();
+                name = readFromFile("111nam111.txt").trim();
+                phone_no = readFromFile("111pho111.txt").trim();
 
 
                 if (text_req.isEmpty())
@@ -114,7 +115,7 @@ public class _8_Notices extends AppCompatActivity {
                 noticeInfo usrinf = new noticeInfo(date, name, phone_no, text_req);
                 noticeRef.push().setValue(usrinf);
 
-                Toast.makeText(getApplicationContext(), "Notice has been sent", Toast.LENGTH_LONG).show();
+                FancyToast.makeText(getApplicationContext(), "Notice has been sent", FancyToast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
             }
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -191,7 +192,6 @@ public class _8_Notices extends AppCompatActivity {
             }
         }
         return st;
-        //returns string
     }
 
     public void hidekeyboard(View view) {
