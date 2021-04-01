@@ -72,7 +72,7 @@ public class _10_More_Requests extends AppCompatActivity {
 
 
     private void requestRecyclerView() {
-        recyclerView = findViewById(R.id.request_recyclerview_12);
+        recyclerView = findViewById(R.id.request_recyclerview_10);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         requestList = new ArrayList<>();

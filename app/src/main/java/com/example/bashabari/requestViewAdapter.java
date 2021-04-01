@@ -40,7 +40,7 @@ public class requestViewAdapter extends RecyclerView.Adapter<requestViewAdapter.
 
     @Override
     public int getItemCount() {
-        return 0;
+        return requestList.size();
     }
 
     public class requestViewHolder extends RecyclerView.ViewHolder {
