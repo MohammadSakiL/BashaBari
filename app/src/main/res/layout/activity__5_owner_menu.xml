@@ -171,7 +171,8 @@
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:text="...................."
-                android:textSize="18sp" />
+                android:textSize="20sp"
+                android:textColor="@color/colorWhite"/>
 
             <TextView
                 android:id="@+id/recentreq_text"

@@ -75,7 +75,7 @@ public class _7_Register_Tenants extends AppCompatActivity {
 
                     if(password.length()<3)
                         edtPassword.setError("Input minimum 6 character password");
-                    else if(phone_no.length() != 3)
+                    else if(phone_no.length() != 11)
                         edtPhoneNumber.setError("Invalid phone number");
                     else
                         saveToDatabase(name, address, nid_no, phone_no, password);

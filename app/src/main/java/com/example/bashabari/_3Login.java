@@ -40,7 +40,7 @@ public class _3Login extends AppCompatActivity {
     public static final String Phone_File = "111pho111.txt";
     public static final String T_Owner_File = "111t_ow111.txt";
 
-    private EditText edtPhoneNumber3,edtPassword3;
+    private EditText edtPhoneNumber3, edtPassword3;
     private CheckBox loginAsOwner3;
     private Button btnLogin3;
     private TextView txtRegister3;
@@ -60,50 +60,47 @@ public class _3Login extends AppCompatActivity {
         ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
         tenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
 
-         if(!isConnected(_3Login.this))
+        if (!isConnected(_3Login.this))
             buildDialog(_3Login.this).show();
 
         txtRegister3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(loginAsOwner3.isChecked()){
-                    Intent intent = new Intent(_3Login.this,_4Register.class);
+                if (loginAsOwner3.isChecked()) {
+                    Intent intent = new Intent(_3Login.this, _4Register.class);
                     startActivity(intent);
-                }
-                else {
-                    FancyToast.makeText(_3Login.this,"You can only register as owner",Toast.LENGTH_LONG,FancyToast.INFO,true).show();
+                } else {
+                    FancyToast.makeText(_3Login.this, "You can only register as owner", Toast.LENGTH_LONG, FancyToast.INFO, true).show();
                 }
             }
         });
 
 
-
         btnLogin3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String getPhone_no,getPassword;
+                final String getPhone_no, getPassword;
                 getPhone_no = edtPhoneNumber3.getText().toString().trim();
                 getPassword = edtPassword3.getText().toString().trim();
 
-                if(loginAsOwner3.isChecked()){
-                    if(getPhone_no.isEmpty())
+                if (loginAsOwner3.isChecked()) {
+                    if (getPhone_no.isEmpty())
                         edtPhoneNumber3.setError("Input your phone number");
-                    else if(getPassword.isEmpty())
+                    else if (getPassword.isEmpty())
                         edtPassword3.setError("Input your password");
-                    else{
-                        ownerLogin(getPhone_no,getPassword);
+                    else {
+                        ownerLogin(getPhone_no, getPassword);
 
                     }
 
-                }
-                else {
+                } else {
                     //FancyToast.makeText(_3Login.this,"You can only register as owner",Toast.LENGTH_LONG,FancyToast.INFO,true).show();
-                    if(getPhone_no.isEmpty())
+                    if (getPhone_no.isEmpty())
                         edtPhoneNumber3.setError("Input your phone number");
-                    else if(getPassword.isEmpty())
+                    else if (getPassword.isEmpty())
                         edtPassword3.setError("Input your password");
-                    else{
-                        tenantLogin(getPhone_no,getPassword);
+                    else {
+                        tenantLogin(getPhone_no, getPassword);
 
                     }
                 }
@@ -127,21 +124,20 @@ public class _3Login extends AppCompatActivity {
                     }, 1000);
                 }
             });
-        }catch (Exception e)
-        {
+        } catch (Exception e) {
 
         }
     }
 
-    private void tenantLogin(final String getPhone_no,final String getPassword) {
-        try{
+    private void tenantLogin(final String getPhone_no, final String getPassword) {
+        try {
             tenantReference.child(getPhone_no).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     try {
                         tenantInfo userinfo = snapshot.getValue(tenantInfo.class);
-                        if(getPhone_no.equals(userinfo.getPhone_no()) && getPassword.equals(userinfo.getPassword())){
-                            FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_SHORT,FancyToast.SUCCESS,true).show();
+                        if (getPhone_no.equals(userinfo.getPhone_no()) && getPassword.equals(userinfo.getPassword())) {
+                            FancyToast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
 
                             saveLoginInfoToFile(userinfo.getAddress(), userinfo.getName(), userinfo.getNid_no(), userinfo.getPassword(), userinfo.getPhone_no());
 
@@ -152,15 +148,15 @@ public class _3Login extends AppCompatActivity {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                            Intent intent = new Intent(_3Login.this,_6_User_menu.class);
+                            Intent intent = new Intent(_3Login.this, _6_User_menu.class);
                             startActivity(intent);
 
-                        }else {
-                            FancyToast.makeText(_3Login.this,"Invalid phone number or password 1",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        } else {
+                            FancyToast.makeText(_3Login.this, "Invalid phone number or password 1", Toast.LENGTH_LONG, FancyToast.ERROR, true).show();
 
                         }
                     } catch (Exception e) {
-                        FancyToast.makeText(_3Login.this,"Invalid phone number or password 2",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        FancyToast.makeText(_3Login.this, "Invalid phone number or password 2", Toast.LENGTH_LONG, FancyToast.ERROR, true).show();
                     }
                 }
 
@@ -169,7 +165,7 @@ public class _3Login extends AppCompatActivity {
 
                 }
             });
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
@@ -182,11 +178,11 @@ public class _3Login extends AppCompatActivity {
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     try {
                         ownerInfo userInfo = snapshot.getValue(ownerInfo.class);
-                        if(getPhone_no.equals(userInfo.getPhone_no()) && getPassword.equals(userInfo.getPassword())){
+                        if (getPhone_no.equals(userInfo.getPhone_no()) && getPassword.equals(userInfo.getPassword())) {
 
                             saveLoginInfoToFile(userInfo.getAddress(), userInfo.getName(), userInfo.getNid_no(), userInfo.getPassword(), userInfo.getPhone_no());
 
-                            FancyToast.makeText(_3Login.this,"Login Successful",Toast.LENGTH_LONG,FancyToast.SUCCESS,true).show();
+                            FancyToast.makeText(_3Login.this, "Login Successful", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                             Intent intent = new Intent(_3Login.this, _5OwnerMenu.class);
                             startActivity(intent);
 
@@ -197,14 +193,12 @@ public class _3Login extends AppCompatActivity {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        }
-                        else {
-                            FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
+                        } else {
+                            FancyToast.makeText(_3Login.this, "Invalid Phone Number or Password", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
 
                         }
-                    }catch (Exception e){
-                        FancyToast.makeText(_3Login.this,"Invalid Phone Number or Password2",Toast.LENGTH_LONG,FancyToast.ERROR,true).show();
-
+                    } catch (Exception e) {
+                        FancyToast.makeText(_3Login.this, "Invalid Phone Number or Password2", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
 
 
                     }
@@ -216,13 +210,11 @@ public class _3Login extends AppCompatActivity {
                 }
             });
 
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
     }
-
-
 
 
     public boolean isConnected(Context context) {
@@ -234,14 +226,15 @@ public class _3Login extends AppCompatActivity {
             android.net.NetworkInfo wifi = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
             android.net.NetworkInfo mobile = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
 
-            if((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting())) return true;
+            if ((mobile != null && mobile.isConnectedOrConnecting()) || (wifi != null && wifi.isConnectedOrConnecting()))
+                return true;
             else
                 return false;
         } else
             return false;
     }
 
-    public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no){
+    public void saveLoginInfoToFile(String address, String name, String nid_no, String password, String phone_no) {
 
         FileOutputStream fos1 = null;
         try {
@@ -283,9 +276,6 @@ public class _3Login extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-
-
 
 
     public AlertDialog.Builder buildDialog(Context c) {

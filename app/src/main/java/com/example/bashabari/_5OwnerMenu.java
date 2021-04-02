@@ -22,6 +22,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
@@ -45,11 +46,12 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
     private List<requestInfo> requestList;
 
 
-
-
-
     private DrawerLayout drawerLayout;
     private NavigationView navigationView;
+
+
+    private DatabaseReference ownerReference;
+    String _USERNAME,_ADDRESS;
 
 
 
@@ -60,14 +62,17 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
 
         requestRecyclerView();
 
-        //setContentFromDatabase();
+        nameTitle = findViewById(R.id.nameTitle_5);
+        addressTitle = findViewById(R.id.addressTitle_5);
+        nameTitle.setText(readFromFile("111nam111.txt").trim());
+        addressTitle.setText(readFromFile("111add111.txt").trim());
 
 
 
 
 
 
-
+        ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
 
 
         drawerLayout = findViewById(R.id.page_layout_5);
@@ -90,8 +95,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
 
         recyclerView = findViewById(R.id.request_recyclerview_5);
 
-        nameTitle = findViewById(R.id.nameTitle_5);
-        addressTitle = findViewById(R.id.addressTitle_5);
+
 
         see_more_btn = findViewById(R.id.see_more_btn_5);
 
@@ -158,11 +162,6 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
         });
     }
 
-    private void setContentFromDatabase() {
-        nameTitle.setText(readFromFile("111nam111.txt"));
-        addressTitle.setText(readFromFile("111add111.txt"));
-
-    }
 
     private String readFromFile(String File_Name){
         String st = null;
@@ -199,7 +198,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
 
         switch (item.getItemId()){
             case R.id.nav_home:
-                Intent intent = new Intent(_5OwnerMenu.this,_5OwnerMenu.class);
+                Intent intent = new Intent(_5OwnerMenu.this,update_profile.class);
                 startActivity(intent);
                 break;
             case R.id.nav_add_tenant:
