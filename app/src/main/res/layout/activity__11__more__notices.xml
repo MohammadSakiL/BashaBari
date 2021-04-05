@@ -43,9 +43,9 @@
             />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/request_recyclerview_11"
+            android:id="@+id/notice_recyclerview_11"
             android:layout_width="320dp"
-            android:layout_height="150dp"
+            android:layout_height="500dp"
             android:layout_below="@+id/ntctext2"
             android:layout_centerHorizontal="true"
             />
