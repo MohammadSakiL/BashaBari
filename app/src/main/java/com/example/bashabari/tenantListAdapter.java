@@ -18,10 +18,12 @@ public class tenantListAdapter extends RecyclerView.Adapter<tenantListAdapter.te
 
     private List<tenantInfo> tenantList;
     private Context context;
+    private RecyclerViewClickListener listener;
 
-    public tenantListAdapter(Context context,List<tenantInfo> tenantList){
+    public tenantListAdapter(Context context,List<tenantInfo> tenantList,RecyclerViewClickListener listener){
         this.context =context;
         this.tenantList =tenantList;
+        this.listener = listener;
     }
 
     @NonNull
@@ -43,7 +45,7 @@ public class tenantListAdapter extends RecyclerView.Adapter<tenantListAdapter.te
         return tenantList.size();
     }
 
-    public class tenantViewHolder extends RecyclerView.ViewHolder {
+    public class tenantViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
         TextView getTenantListPhoneNumberCardview;
         CheckBox tenantListNameCardview;
@@ -52,7 +54,17 @@ public class tenantListAdapter extends RecyclerView.Adapter<tenantListAdapter.te
             super(itemView);
             tenantListNameCardview = itemView.findViewById(R.id.tenantListNameCardview);
             getTenantListPhoneNumberCardview = itemView.findViewById(R.id.tenantListPhoneNumberCardview);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View view) {
+            listener.onClick(view,getAdapterPosition());
+        }
+    }
+
+    public interface RecyclerViewClickListener{
+        void onClick(View v,int position);
     }
 
 

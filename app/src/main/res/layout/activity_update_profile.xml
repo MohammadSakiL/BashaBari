@@ -11,44 +11,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="200dp"-->
-<!--            android:background="@color/colorPrimary"-->
-<!--            android:padding="20dp">-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/profile_image"-->
-<!--                android:layout_width="100dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:src="@drawable/profile" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/fullname_field"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_centerVertical="true"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_toRightOf="@+id/profile_image"-->
-<!--                android:fontFamily="@font/futura_lt_bt"-->
-<!--                android:includeFontPadding="false"-->
-<!--                android:text="Mahfuzur Rahman Shakil"-->
-<!--                android:textColor="@color/colorWhite"-->
-<!--                android:textSize="25sp"-->
-<!--                android:textStyle="bold" />-->
-
-<!--            <TextView-->
-<!--                android:id="@+id/username_field"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_below="@id/fullname_field"-->
-<!--                android:layout_marginLeft="10dp"-->
-<!--                android:layout_toRightOf="@+id/profile_image"-->
-<!--                android:includeFontPadding="false"-->
-<!--                android:text="Md_Shakil"-->
-<!--                android:textSize="20sp" />-->
-<!--        </RelativeLayout>-->
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -85,11 +47,7 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-<!--            <EditText-->
-<!--                android:id="@+id/update_name"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:text="shakil123"/>-->
+
             
             <com.google.android.material.textfield.TextInputLayout
 

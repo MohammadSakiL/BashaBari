@@ -73,7 +73,7 @@ public class _7_Register_Tenants extends AppCompatActivity {
 
                 if( !name.isEmpty() && !address.isEmpty() && !nid_no.isEmpty() && !phone_no.isEmpty() && !password.isEmpty() ) {
 
-                    if(password.length()<3)
+                    if(password.length()<6)
                         edtPassword.setError("Input minimum 6 character password");
                     else if(phone_no.length() != 11)
                         edtPhoneNumber.setError("Invalid phone number");
@@ -91,7 +91,7 @@ public class _7_Register_Tenants extends AppCompatActivity {
                     else if(phone_no.isEmpty())
                         edtPhoneNumber.setError("Input your address");
                     else if(password.isEmpty())
-                        edtPassword.setError("Input a passwordField");
+                        edtPassword.setError("Input a password");
                 }
 
             }

@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "713675790809",
-    "firebase_url": "https://bashabari-58a75-default-rtdb.firebaseio.com",
-    "project_id": "bashabari-58a75",
-    "storage_bucket": "bashabari-58a75.appspot.com"
+    "project_number": "1083585893317",
+    "firebase_url": "https://bashabari-44c95-default-rtdb.firebaseio.com",
+    "project_id": "bashabari-44c95",
+    "storage_bucket": "bashabari-44c95.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:713675790809:android:9e19618202e6fc48d161c8",
+        "mobilesdk_app_id": "1:1083585893317:android:2af9d31dc28ffdaca471ac",
         "android_client_info": {
           "package_name": "com.example.bashabari"
         }
       },
       "oauth_client": [
         {
-          "client_id": "713675790809-4n188vv82h3qqvf64n7c02pqripnsna7.apps.googleusercontent.com",
+          "client_id": "1083585893317-kfttmlpoendfii24clogas77koe56ua9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAKmoKBJbDwy5eeLdFE19ES3XKTUPdKooY"
+          "current_key": "AIzaSyAi8g7m1Xl_hMe9beK36H31DyXoMGYm4Sw"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "713675790809-4n188vv82h3qqvf64n7c02pqripnsna7.apps.googleusercontent.com",
+              "client_id": "1083585893317-kfttmlpoendfii24clogas77koe56ua9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

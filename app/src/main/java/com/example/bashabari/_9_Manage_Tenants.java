@@ -35,6 +35,7 @@ public class _9_Manage_Tenants extends AppCompatActivity {
     private RecyclerView recycleViewItem;
     private List<tenantInfo> tenantList;
     private tenantListAdapter adapter;
+    private tenantListAdapter.RecyclerViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,9 +76,10 @@ public class _9_Manage_Tenants extends AppCompatActivity {
     }
 
     private void tenantsRecyclerView(){
+        setOnClickListener();
         recycleViewItem = findViewById(R.id.recycleViewItem9);
         tenantList = new ArrayList<>();
-        adapter = new tenantListAdapter(this,tenantList);
+        adapter = new tenantListAdapter(this,tenantList,listener);
 
         recycleViewItem.setHasFixedSize(true);
         recycleViewItem.setLayoutManager(new LinearLayoutManager(this));
@@ -123,6 +125,17 @@ public class _9_Manage_Tenants extends AppCompatActivity {
 //
 //            }
 //        });
+    }
+
+    private void setOnClickListener() {
+        listener = new tenantListAdapter.RecyclerViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(getApplicationContext(),_13SentMessage.class);
+                intent.putExtra("name",tenantList.get(position).getName());
+                startActivity(intent);
+            }
+        };
     }
 
     private String readFromFile(String File_Name) {
