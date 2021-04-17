@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,8 +31,8 @@ import java.util.Date;
 
 public class _13SentMessage extends AppCompatActivity {
     private EditText tenantNo,message;
-    private Button send;
-    private TextView home;
+    private ImageView send;
+    private ImageView back;
     private DatabaseReference tenantReference;
     private DatabaseReference messageReference;
     String _Name = "";
@@ -48,14 +49,14 @@ public class _13SentMessage extends AppCompatActivity {
         tenantNo = findViewById(R.id.to13);
         message = findViewById(R.id.message13);
         send = findViewById(R.id.send13);
-        home = findViewById(R.id.home13);
+        back = findViewById(R.id.arrow_btn_13);
 
         Bundle extras = getIntent().getExtras();
         if(extras != null){
             _Name = extras.getString("name");
         }
 
-        tenantNo.setText(_Name);
+        tenantNo.setText( "   "+_Name);
 
 
 
@@ -79,7 +80,7 @@ public class _13SentMessage extends AppCompatActivity {
             }
         });
 
-        home.setOnClickListener(new View.OnClickListener() {
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(_13SentMessage.this,_5OwnerMenu.class);
@@ -100,6 +101,7 @@ public class _13SentMessage extends AppCompatActivity {
                     messageReference.push().setValue(mInfo);
                     FancyToast.makeText(getApplicationContext(), "Message has been sent", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
 
+                    message.setText(" ");
                 }
 
                 @Override

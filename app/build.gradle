@@ -47,9 +47,11 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //Firebase Connection
-    implementation platform('com.google.firebase:firebase-bom:26.7.0')
+    //implementation platform('com.google.firebase:firebase-bom:26.7.0')
     implementation 'com.google.firebase:firebase-analytics'
     implementation 'com.google.firebase:firebase-database'
+
+    implementation platform('com.google.firebase:firebase-bom:27.0.0')
 
 
     //Fancy Toast
