@@ -62,6 +62,7 @@ dependencies {
     implementation 'com.shreyaspatil:MaterialNavigationView:1.1'
     implementation 'com.google.android.material:material:1.0.0'
 
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 
 }

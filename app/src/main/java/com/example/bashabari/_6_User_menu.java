@@ -23,7 +23,7 @@ public class _6_User_menu extends AppCompatActivity {
     private ImageView menu_btn;
     private ImageView see_more_6;
     private TextView bill_6;
-    private TextView request_6, signout_btn;
+    private TextView request_6, signout_btn, pay_6;
     private TextView name_title, address_title;
 
     private RecyclerView recyclerView;
@@ -44,6 +44,7 @@ public class _6_User_menu extends AppCompatActivity {
         menu_btn = findViewById(R.id.btnMenu6);
         signout_btn = findViewById(R.id.txtSignoutOwner6);
         request_6 = findViewById(R.id.txtRqst6);
+        pay_6=findViewById(R.id.txtpay6);
         see_more_6 = findViewById(R.id.see_more_btn_6);
         name_title= findViewById(R.id.nameTitle_6);
         address_title= findViewById(R.id.addressTitle_6);
@@ -81,6 +82,15 @@ public class _6_User_menu extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent_6 = new Intent(_6_User_menu.this, _12_Requests.class);
+                startActivity(intent_6);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
+
+        pay_6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent_6 = new Intent(_6_User_menu.this, _14_PayBill.class);
                 startActivity(intent_6);
                 overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
             }

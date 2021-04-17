@@ -46,6 +46,17 @@
                 android:textColor="@color/colorBlack"
                 android:textStyle="bold"/>
 
+            <TextView
+                android:id="@+id/txtpay6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/futura_md_bt"
+                android:padding="20sp"
+                android:text="Payment"
+                android:textSize="25sp"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"/>
+
 
             <TextView
                 android:id="@+id/txtSignoutOwner6"

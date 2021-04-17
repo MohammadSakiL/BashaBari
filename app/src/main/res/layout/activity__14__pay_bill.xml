@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="._14_PayBill">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/owner_menu"
+        android:padding="35sp">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/back_button"
+            android:id="@+id/arrow_btn_14"
+            />
+
+        <TextView
+            android:id="@+id/txt14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment"
+            android:textSize="70sp"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorPrimary"
+            android:paddingBottom="15sp"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bkashlogo"
+            android:layout_below="@id/txt14"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bkash_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"
+            android:layout_marginBottom="100dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nagadlogo"
+            android:layout_below="@id/bkashlogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/nagad_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="2dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/visalogo"
+            android:layout_below="@id/txt14"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/visa_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="100dp"/>
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rocketlogo"
+            android:layout_below="@id/visalogo"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/rocket_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="2dp"/>
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
