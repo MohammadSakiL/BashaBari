@@ -1,6 +1,7 @@
 package com.example.bashabari;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +13,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class _14_PayBill extends AppCompatActivity {
 
     private ImageView back;
-    private CircleImageView bkash;
-    private CircleImageView nagad;
-    private CircleImageView visa;
-    private CircleImageView rocket;
+    private CardView bkash;
+    private CardView nagad;
+    private CardView visa;
+    private CardView rocket;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
