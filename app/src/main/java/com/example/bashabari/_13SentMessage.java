@@ -15,6 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -34,8 +36,8 @@ public class _13SentMessage extends AppCompatActivity {
     private ImageView send;
     private ImageView back;
     private DatabaseReference tenantReference;
-    private DatabaseReference messageReference;
-    String _Name = "";
+    private DatabaseReference messageReference,dbRef;
+    String _Name = "",_PHONENUMBER;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +45,7 @@ public class _13SentMessage extends AppCompatActivity {
         setContentView(R.layout.activity__13_sent_message);
 
         tenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
-        messageReference = FirebaseDatabase.getInstance().getReference("Message Database");
+        messageReference = FirebaseDatabase.getInstance().getReference().child("Message Database");
 
 
         tenantNo = findViewById(R.id.to13);
@@ -57,6 +59,10 @@ public class _13SentMessage extends AppCompatActivity {
         }
 
         tenantNo.setText( "   "+_Name);
+        if(extras != null){
+            _PHONENUMBER = extras.getString("phone_number");
+        }
+
 
 
 
@@ -67,16 +73,12 @@ public class _13SentMessage extends AppCompatActivity {
 
                 final String sendTo,sendMessage,date,owner_no;
                 owner_no = readFromFile("111pho111.txt").trim();
-                sendTo = tenantNo.getText().toString().trim();
                 sendMessage = message.getText().toString();
 
-                if(sendTo.isEmpty()){
-                    tenantNo.setError("Enter a phone Number");
-                }
-                else {
+
                     date = getTodaysDate();
-                    saveToDatabase(sendTo,owner_no,date,sendMessage);
-                }
+                    saveToDatabase(_PHONENUMBER,owner_no,date,sendMessage);
+
             }
         });
 
@@ -94,21 +96,28 @@ public class _13SentMessage extends AppCompatActivity {
 
         try {
 
-            messageReference.child(sendTo).addValueEventListener(new ValueEventListener() {
+            dbRef = messageReference.child(sendTo);
+            final String uniqueKey = dbRef.push().getKey();
+
+
+            messageInfo mInfo = new messageInfo(sendTo, owner_no, date, sendMessage,uniqueKey);
+
+            dbRef.child(uniqueKey).setValue(mInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    messageInfo mInfo = new messageInfo(sendTo, owner_no, date, sendMessage);
-                    messageReference.push().setValue(mInfo);
+                public void onSuccess(Void aVoid) {
                     FancyToast.makeText(getApplicationContext(), "Message has been sent", FancyToast.LENGTH_LONG, FancyToast.SUCCESS, true).show();
-
                     message.setText(" ");
-                }
 
+                }
+            }).addOnFailureListener(new OnFailureListener() {
                 @Override
-                public void onCancelled(@NonNull DatabaseError error) {
+                public void onFailure(@NonNull Exception e) {
+                    FancyToast.makeText(getApplicationContext(), "Something Went Wrong", FancyToast.LENGTH_SHORT, FancyToast.ERROR, true).show();
 
                 }
             });
+
+
 
         }catch (Exception e){
             e.printStackTrace();

@@ -13,7 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._13SentMessage"></activity>
+        <activity android:name="._17RecivedMessage"></activity>
+        <activity android:name=".Update_tenant_profile" />
+        <activity android:name="._13SentMessage" />
         <activity android:name=".update_profile" />
         <activity android:name="._12_Requests" />
         <activity android:name="._11_More_Notices" />

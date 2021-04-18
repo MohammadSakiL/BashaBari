@@ -78,11 +78,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
         drawerLayout = findViewById(R.id.page_layout_5);
         navigationView = findViewById(R.id.nav_view);
 
-
         navigationView.bringToFront();
-
-
-
         navigationView.setNavigationItemSelectedListener(this);
 
 
@@ -91,9 +87,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
 
 
 
-
-
-        recyclerView = findViewById(R.id.request_recyclerview_5);
+        recyclerView = findViewById(R.id.notice_recyclerview_5);
 
 
 
@@ -131,7 +125,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
     }
 
     private void requestRecyclerView() {
-        recyclerView = findViewById(R.id.request_recyclerview_5);
+        recyclerView = findViewById(R.id.notice_recyclerview_5);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         requestList = new ArrayList<>();

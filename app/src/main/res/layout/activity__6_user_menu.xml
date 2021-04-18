@@ -1,65 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/page_layout_5"
-    tools:context="._6_User_menu">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/page_layout_6"
+    tools:context="._6_User_menu"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start"
+    >
 
-    <LinearLayout
-        android:layout_width="match_parent" android:layout_height="match_parent"
-        android:background="@drawable/bg"
-        android:id="@+id/main_menu_layout_6"
-        >
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/tenantNav"
+        app:headerLayout="@layout/owner_header"
+        app:menu="@menu/tenant_menu"
+        android:layout_gravity="start"/>
 
-
-        <LinearLayout
-            android:id="@+id/menu_layout_6"
-            android:layout_width="350sp"
-            android:layout_height="match_parent"
-            android:background="@color/ColorMenu"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:visibility="gone"
-            >
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:paddingTop="60sp"
-                android:paddingBottom="20sp"
-                android:text="MENU"
-                android:textSize="70sp"
-                android:textColor="@color/colorPrimary"
-                android:fontFamily="@font/futura_md_cn_bt"
-                android:textStyle="bold"/>
-
-            <TextView
-                android:id="@+id/txtRqst6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/futura_md_bt"
-                android:padding="20sp"
-                android:text="Requests"
-                android:textSize="25sp"
-                android:textColor="@color/colorBlack"
-                android:textStyle="bold"/>
-
-
-            <TextView
-                android:id="@+id/txtSignoutOwner6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/futura_md_bt"
-                android:padding="20sp"
-                android:text="Sign Out"
-                android:textSize="25sp"
-                android:textColor="@color/colorBlack"
-                android:textStyle="bold"/>
-
-
-        </LinearLayout>
 
 
         <RelativeLayout
@@ -69,7 +27,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/owner_menu"
             android:padding="35sp"
-            android:visibility="visible">
+            android:visibility="visible"
+            >
 
             <ImageView
                 android:id="@+id/btnMenu6"
@@ -79,17 +38,17 @@
 
 
             <ImageView
-                android:id="@+id/owner_profile_pic"
+                android:id="@+id/tenant_profile_pic"
                 android:layout_width="100sp"
                 android:layout_height="100sp"
-                android:layout_below="@+id/ownertext"
+                android:layout_below="@+id/tenantText"
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="15sp"
                 android:src="@drawable/profile_pic" />
 
 
             <TextView
-                android:id="@+id/ownertext"
+                android:id="@+id/tenantText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
@@ -105,14 +64,14 @@
                 android:id="@+id/see_more_btn_6"
                 android:layout_width="200dp"
                 android:layout_height="100dp"
-                android:layout_below="@+id/request_recyclerview_5"
+                android:layout_below="@+id/request_recyclerview_6"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="20sp"
                 android:layout_marginRight="10sp"
                 android:src="@drawable/see_more_btn" />
 
             <ImageView
-                android:id="@+id/info_bg"
+                android:id="@+id/info_bg_1"
                 android:layout_width="match_parent"
                 android:layout_height="10sp"
                 android:layout_below="@+id/addressTitle_6"
@@ -123,7 +82,7 @@
                 android:id="@+id/nameTitle_6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/owner_profile_pic"
+                android:layout_below="@+id/tenant_profile_pic"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_bt"
                 android:paddingTop="20sp"
@@ -140,14 +99,14 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/futura_md_bt"
                 android:layout_centerHorizontal="true"
-                android:text=""
+                android:text="edfgfg"
                 android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/recentreq_text"
+                android:id="@+id/recent_notice_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/info_bg"
+                android:layout_below="@+id/info_bg_1"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="@font/futura_md_cn_bt"
                 android:paddingTop="35sp"
@@ -158,10 +117,10 @@
 
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/request_recyclerview_5"
+                android:id="@+id/request_recyclerview_6"
                 android:layout_width="320dp"
                 android:layout_height="150dp"
-                android:layout_below="@+id/recentreq_text"
+                android:layout_below="@+id/recent_notice_text"
                 android:layout_centerHorizontal="true"
 
 
@@ -169,5 +128,4 @@
 
         </RelativeLayout>
 
-    </LinearLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

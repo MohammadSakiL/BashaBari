@@ -133,6 +133,7 @@ public class _9_Manage_Tenants extends AppCompatActivity {
             public void onClick(View v, int position) {
                 Intent intent = new Intent(getApplicationContext(),_13SentMessage.class);
                 intent.putExtra("name",tenantList.get(position).getName());
+                intent.putExtra("phone_number",tenantList.get(position).getPhone_no());
                 startActivity(intent);
             }
         };
