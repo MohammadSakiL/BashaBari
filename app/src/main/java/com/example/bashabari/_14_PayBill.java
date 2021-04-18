@@ -55,7 +55,7 @@ public class _14_PayBill extends AppCompatActivity {
         visa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(_14_PayBill.this,_17_Visa.class);
+                Intent intent = new Intent(_14_PayBill.this, _19_Visa.class);
                 startActivity(intent);
             }
         });

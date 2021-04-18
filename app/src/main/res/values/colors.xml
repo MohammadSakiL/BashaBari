@@ -9,4 +9,8 @@
     <color name="colorBlack">#212121</color>
     <color name="colorOrange">#ff4500</color>
     <color name="ColorMenu">#9E9E9E</color>
+
+    <color name="colorVisa">#607D8B</color>
+    <color name="colorVisaDark">#455A64</color>
+    <color name="colorAvisa">#4CAF50</color>
 </resources>

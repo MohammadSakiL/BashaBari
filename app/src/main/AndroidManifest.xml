@@ -15,6 +15,11 @@
         android:theme="@style/AppTheme">
         <activity android:name="._17RecivedMessage"></activity>
         <activity android:name=".Update_tenant_profile" />
+        <activity android:name="._18_Rocket"/>
+        <activity android:name="._19_Visa"/>
+        <activity android:name="._16_Nagad"/>
+        <activity android:name="._15_Bkash"/>
+        <activity android:name="._14_PayBill"/>
         <activity android:name="._13SentMessage" />
         <activity android:name=".update_profile" />
         <activity android:name="._12_Requests" />

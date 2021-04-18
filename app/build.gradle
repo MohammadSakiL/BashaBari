@@ -64,5 +64,6 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
+    implementation 'com.braintreepayments:card-form:3.1.1'
 
 }
