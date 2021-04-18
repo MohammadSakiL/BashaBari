@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="._15_Bkash">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/owner_menu"
+        android:padding="35sp">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/back_button"
+            android:id="@+id/arrow_btn_15"
+            />
+
+        <TextView
+            android:id="@+id/txt15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bkash"
+            android:textSize="70sp"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhite"
+            android:paddingBottom="15sp"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/bkashlogo"
+            android:layout_below="@id/txt15"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/bkash_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="5dp"/>
+
+        <EditText
+            android:id="@+id/message15"
+            android:layout_below="@+id/bkashlogo"
+            android:layout_width="match_parent"
+            android:layout_height="380sp"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:hint=" 1.   Go to your bKash Mobile Menu by dialing *247# \n
+            \n 2. Choose “Send Money” \n
+            \n 3. Enter the bKash Account Number you want to send money to \n
+             \n 4. Enter the amount you want to send \n
+             \n 5. Enter a reference about the transaction. \n
+             \n 6. Now enter your bKash Mobile Menu PIN to confirm the transaction"
+            android:inputType="textMultiLine|textLongMessage"
+            android:textSize="20sp"
+            android:gravity="top"
+            android:background="@drawable/rectangle"
+            android:padding="20sp"
+            />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/message15"
+            android:src="@drawable/payment_done"
+            android:id="@+id/done15"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="._18_Rocket">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:background="@drawable/owner_menu"
+        android:padding="35sp">
+
+        <ImageView
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/back_button"
+            android:id="@+id/arrow_btn_18"
+            />
+
+        <TextView
+            android:id="@+id/txt18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rocket"
+            android:textSize="70sp"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/colorWhite"
+            android:paddingBottom="15sp"
+            />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/rocketlogo"
+            android:layout_below="@id/txt18"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/rocket_logo"
+            app:civ_border_width="3dp"
+            app:civ_border_color="@color/colorBlack"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"/>
+
+        <EditText
+            android:id="@+id/message18"
+            android:layout_below="@+id/rocketlogo"
+            android:layout_width="match_parent"
+            android:layout_height="350sp"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:hint=" 1.   Go to your Rocket Mobile Menu by dialing *322# \n
+            \n 2. Choose option 2 send money \n
+            \n 3. Enter the Rocket account number of the recipient
+             \n\n 4. Enter amount you want to send
+    \n         \n 5. Enter your Rocket mobile menu PIN"
+            android:inputType="textMultiLine|textLongMessage"
+            android:textSize="20sp"
+            android:gravity="top"
+            android:background="@drawable/rectangle"
+            android:padding="20sp"
+            />
+
+        <ImageView
+            android:layout_width="70dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/message18"
+            android:src="@drawable/payment_done"
+            android:id="@+id/done18"/>
+
+
+
+    </RelativeLayout>
+
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
