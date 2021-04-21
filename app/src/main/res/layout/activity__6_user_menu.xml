@@ -99,6 +99,8 @@
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/futura_md_bt"
                 android:layout_centerHorizontal="true"
+                android:textColor="@color/colorWhite"
+                android:layout_marginBottom="5dp"
                 android:text="edfgfg"
                 android:textSize="18sp" />
 

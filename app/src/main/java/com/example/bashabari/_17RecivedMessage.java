@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Adapter;
+import android.widget.ImageView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -26,6 +29,7 @@ public class _17RecivedMessage extends AppCompatActivity {
     private RecyclerView recyclerView;
     private List<messageInfo> list;
     private Message_Adapter adapter;
+    private ImageView back;
 
     private DatabaseReference databaseReference,dbRef;
 
@@ -33,6 +37,17 @@ public class _17RecivedMessage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__17_recived_message);
+
+        back = findViewById(R.id.back_arrow_btn_17);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent7 = new Intent(_17RecivedMessage.this, _6_User_menu.class);
+                startActivity(intent7);
+                overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+            }
+        });
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Message Database");
 

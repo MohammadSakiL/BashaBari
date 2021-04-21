@@ -16,7 +16,8 @@ tools:context="._19_Visa"
         android:id="@+id/arrow_btn_19"
         android:layout_width="51dp"
         android:layout_height="48dp"
-        android:src="@drawable/back_button" />
+        android:src="@drawable/back_button"
+        android:layout_marginBottom="20dp"/>
 
 
 

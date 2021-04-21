@@ -11,35 +11,39 @@
         android:layout_margin="5dp"
         >
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingHorizontal="25dp"
-            android:paddingVertical="8dp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/owner_message"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="This is a message text"
-                android:textSize="18dp"
-                android:textColor="@android:color/black"
-                android:layout_marginBottom="16dp"
-                />
+     <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="8dp">
 
             <TextView
                 android:id="@+id/_owner_message_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="11/10/2019 at 11:33 pm"
+                android:paddingBottom="25dp"
+                android:textSize="20dp"
+                android:textColor="@android:color/black"
+                />
+
+
+
+            <TextView
+                android:id="@+id/owner_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/_owner_message_date"
+                android:text="New Message"
+                android:textSize="17dp"
                 android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                android:layout_marginLeft="190dp"/>
+
+                />
 
 
 
-        </LinearLayout>
+
+     </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
