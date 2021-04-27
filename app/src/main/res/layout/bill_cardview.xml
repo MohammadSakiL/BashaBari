@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHomeRent1"
+                android:text="Home rent: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtHomeRent2"
+                android:layout_toRightOf="@+id/txtHomeRent1"
+                android:text="1234 "
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtWaterBill1"
+                android:layout_below="@+id/txtHomeRent1"
+                android:layout_marginTop="10dp"
+                android:text="Water Bill: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/txtWaterBill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/txtWaterBill1"
+                android:layout_below="@id/txtHomeRent2"
+                android:layout_marginTop="10dp"
+                android:text="321"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/txtGasBill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtWaterBill1"
+                android:layout_marginTop="10dp"
+                android:text="Gas Bill: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/txtGasBill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/txtWaterBill1"
+                android:layout_below="@id/txtWaterBill2"
+                android:layout_marginTop="10dp"
+                android:text="100"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/txtOtherBill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtGasBill1"
+                android:layout_marginTop="10dp"
+                android:text="Others Bill: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/txtOtherBill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/txtHomeRent1"
+                android:layout_below="@id/txtGasBill2"
+                android:layout_marginTop="10dp"
+                android:text="100"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/txtTotalBill1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/txtOtherBill1"
+                android:layout_marginTop="10dp"
+                android:text="Total Bill: "
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <TextView
+                android:id="@+id/txtTotalBill2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/txtHomeRent1"
+                android:layout_below="@id/txtOtherBill2"
+                android:layout_marginTop="10dp"
+                android:text="100"
+                android:textSize="20dp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/txtmonth1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txtHomeRent2"
+                android:layout_marginTop="20dp"
+                android:text="Month"
+                android:layout_marginLeft="60dp"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"/>
+
+            <Button
+                android:id="@+id/btnPayBill23"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="70dp"
+                android:layout_marginLeft="60dp"
+                android:text="Pay Bill"
+                android:layout_below="@id/txtmonth1"
+                android:layout_toRightOf="@+id/txtTotalBill2"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+
+                android:background="@drawable/button_background"
+                android:textColor="@color/colorWhite"
+
+                />
+
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>
