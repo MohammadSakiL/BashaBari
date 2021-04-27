@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="match_parent"
+<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/page_layout_11"
     android:layout_width="match_parent"
-    android:id="@+id/page_layout_11">
+    android:layout_height="match_parent">
+
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
 
         android:background="@drawable/owner_menu"
         android:padding="35sp">
 
         <ImageView
+            android:id="@+id/back_arrow_btn_11"
             android:layout_width="50sp"
             android:layout_height="50sp"
-            android:src="@drawable/back_button"
-            android:id="@+id/back_arrow_btn_11"
-            />
+            android:src="@drawable/back_button" />
 
         <TextView
             android:id="@+id/ntctext1"
@@ -33,22 +33,20 @@
             android:id="@+id/ntctext2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notices"
-            android:textSize="70sp"
-            android:fontFamily="@font/futura_md_cn_bt"
-            android:layout_centerHorizontal="true"
-            android:textColor="@color/colorPrimary"
-            android:paddingBottom="15sp"
             android:layout_below="@+id/ntctext1"
-            />
+            android:layout_centerHorizontal="true"
+            android:fontFamily="@font/futura_md_cn_bt"
+            android:paddingBottom="15sp"
+            android:text="Notices"
+            android:textColor="@color/colorPrimary"
+            android:textSize="70sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/notice_recyclerview_11"
             android:layout_width="320dp"
             android:layout_height="500dp"
             android:layout_below="@+id/ntctext2"
-            android:layout_centerHorizontal="true"
-            />
+            android:layout_centerHorizontal="true" />
 
 
     </RelativeLayout>

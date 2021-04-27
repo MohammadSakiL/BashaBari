@@ -31,7 +31,8 @@
                 />
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/update_owner_image"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="150dp"
@@ -129,17 +130,65 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Button
-                android:id="@+id/update_info"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/futura_md_bt"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
+
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:text="UPDATE"
-                android:textColor="@color/colorWhite"
-                android:textStyle="bold"
-                android:onClick="update"/>
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginRight="10dp">
+
+                    <Button
+                        android:id="@+id/btn_owner_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Upload Image"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/colorWhite"
+                        android:onClick="updateImage"
+                        android:layout_marginTop="10dp"
+
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="10dp">
+
+                    <Button
+                        android:id="@+id/update_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/futura_md_bt"
+                        android:text="Update"
+                        android:textAllCaps="false"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        android:background="@drawable/button_background"
+                        android:textColor="@color/colorWhite"
+                        android:onClick="update"
+                        android:layout_marginTop="10dp"
+
+                        />
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
 
 
 

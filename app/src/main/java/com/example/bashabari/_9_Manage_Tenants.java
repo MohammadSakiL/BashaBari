@@ -107,24 +107,7 @@ public class _9_Manage_Tenants extends AppCompatActivity {
 
             }
         });
-//        query.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                tenantList.clear();
-//                if (dataSnapshot.exists()) {
-//                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-//                        tenantInfo ten = snapshot.getValue(tenantInfo.class);
-//                        tenantList.add(ten);
-//                    }
-//                    adapter.notifyDataSetChanged();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
+
     }
 
     private void setOnClickListener() {

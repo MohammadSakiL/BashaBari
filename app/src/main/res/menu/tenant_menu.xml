@@ -16,6 +16,10 @@
             android:title="Request"
             android:icon="@drawable/notice_icon"/>
         <item
+            android:id="@+id/nav_bill"
+            android:title="Home Rent"
+            android:icon="@drawable/ic_bill"/>
+        <item
             android:id="@+id/tenant_payment"
             android:title="Payment"
             android:icon="@drawable/ic_payment"/>

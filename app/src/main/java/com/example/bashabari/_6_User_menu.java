@@ -147,6 +147,10 @@ public class _6_User_menu extends AppCompatActivity implements NavigationView.On
                 Intent intent1 = new Intent(_6_User_menu.this,_12_Requests.class);
                 startActivity(intent1);
                 break;
+            case R.id.nav_bill:
+                Intent intent6 = new Intent(_6_User_menu.this,_24_See_bill.class);
+                startActivity(intent6);
+                break;
             case R.id.tenant_payment:
                 Intent intent2 = new Intent(_6_User_menu.this,_14_PayBill.class);
                 startActivity(intent2);

@@ -11,14 +11,23 @@
             android:id="@+id/nav_add_tenant"
             android:title="Add Tenants"
             android:icon="@drawable/add_tenant_icon"/>
+
+        <item
+            android:id="@+id/nav_manage_tenant"
+            android:title="Manage Tenants"
+            android:icon="@drawable/add_tenant_icon"/>
         <item
             android:id="@+id/nav_notice"
             android:title="Notice"
             android:icon="@drawable/notice_icon"/>
         <item
-            android:id="@+id/nav_manage_tenants"
-            android:title="Tenant List"
+            android:id="@+id/nav_message"
+            android:title="Send Message"
             android:icon="@drawable/manage_tenant_icon"/>
+        <item
+            android:id="@+id/nav_send_bill"
+            android:title="Send Bill"
+            android:icon="@drawable/ic_bill"/>
         <item
             android:id="@+id/nav_logout"
             android:title="Logout"

@@ -47,8 +47,8 @@ public class tenantListAdapter extends RecyclerView.Adapter<tenantListAdapter.te
 
     public class tenantViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
 
-        TextView getTenantListPhoneNumberCardview;
-        CheckBox tenantListNameCardview;
+        TextView getTenantListPhoneNumberCardview,tenantListNameCardview;
+
 
         public tenantViewHolder(@NonNull View itemView) {
             super(itemView);
