@@ -3,7 +3,9 @@ package com.example.bashabari;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -33,6 +35,13 @@ public class _26_View_nid extends AppCompatActivity {
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Nid Image");
         nidImage = findViewById(R.id.nidImage26);
         back_arrow = findViewById(R.id.back_arrow_btn_26);
+        back_arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(_26_View_nid.this,_5OwnerMenu.class);
+                startActivity(intent);
+            }
+        });
 
         PHONENUMBER = getIntent().getStringExtra("phoneNumber");
 
