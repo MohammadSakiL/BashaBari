@@ -216,7 +216,7 @@ public class _5OwnerMenu extends AppCompatActivity implements NavigationView.OnN
                 startActivity(intent5);
                 break;
             case R.id.nav_tolet:
-                Intent intent6 = new Intent(_5OwnerMenu.this,_28_View_tolet.class);
+                Intent intent6 = new Intent(_5OwnerMenu.this,_27_Tolet.class);
                 startActivity(intent6);
                 break;
             case R.id.nav_logout:

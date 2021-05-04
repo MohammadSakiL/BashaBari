@@ -93,7 +93,7 @@
             />
 
         <TextView
-            android:id="@+id/viewTolet3"
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -119,6 +119,16 @@
             android:textColor="@color/colorPrimaryPink"
             android:textSize="25sp" />
 
+        <TextView
+            android:id="@+id/viewTolet3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Find your new home!"
+            android:textColor="@color/colorBlack"
+            android:layout_marginTop="16dp"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center_horizontal"/>
 
     </LinearLayout>
 
