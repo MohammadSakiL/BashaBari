@@ -5,8 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,6 +34,8 @@ public class _24_See_bill extends AppCompatActivity {
     private BillAdapter adapter;
     private List<BillInfo> list;
 
+    private ImageView back_arrow_btn;
+
 
 
     @Override
@@ -39,6 +44,14 @@ public class _24_See_bill extends AppCompatActivity {
         setContentView(R.layout.activity__24__see_bill);
 
 
+        back_arrow_btn = findViewById(R.id.back_arrow_btn_24);
+        back_arrow_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(_24_See_bill.this,_6_User_menu.class);
+                startActivity(intent);
+            }
+        });
 
         billRecycler();
 

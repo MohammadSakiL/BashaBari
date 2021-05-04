@@ -141,8 +141,8 @@ public class Update_tenant_profile extends AppCompatActivity {
         databaseReference.setValue(downloadUrl).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void aVoid) {
-                FancyToast.makeText(Update_tenant_profile.this, "UImage Upload Succesfully", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
-                Intent intent = new Intent(Update_tenant_profile.this,_5OwnerMenu.class);
+                FancyToast.makeText(Update_tenant_profile.this, "Image Upload Succesfully", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
+                Intent intent = new Intent(Update_tenant_profile.this,_6_User_menu.class);
                 startActivity(intent);
 
             }
@@ -184,6 +184,7 @@ public class Update_tenant_profile extends AppCompatActivity {
         databaseReference.child(phone_no).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 if(snapshot.exists()) {
                     try {
                         String link = snapshot.getValue(String.class);

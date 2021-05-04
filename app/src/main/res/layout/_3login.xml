@@ -93,10 +93,12 @@
             />
 
         <TextView
+            android:id="@+id/viewTolet3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="cursive"
+
             android:padding="10sp"
             android:text="Don't have an account?"
             android:textAlignment="center"

@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,11 +28,35 @@ public class _25_Tenant_list extends AppCompatActivity {
     private RecyclerView recycleViewItem;
     private List<tenantInfo> tenantList;
     private manageTenantAdapter adapter;
+    private EditText search_teanant;
+
+    private CharSequence search="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__25__tenant_list);
+
+
+        search_teanant = findViewById(R.id.search_teanant);
+
+        search_teanant.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                adapter.getFilter().filter(s);
+                search = s;
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         tenantsRecyclerView();
     }

@@ -6,8 +6,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -15,10 +17,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.shashank.sony.fancytoastlib.FancyToast;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class manageTenantAdapter extends RecyclerView.Adapter<manageTenantAdapter.managetenantViewHolder> {
@@ -27,12 +34,16 @@ public class manageTenantAdapter extends RecyclerView.Adapter<manageTenantAdapte
 
 
 
+
+
     private Context context;
     private List<tenantInfo> list;
+    private List<tenantInfo> filterList;
 
     public manageTenantAdapter(Context context, List<tenantInfo> list) {
         this.context = context;
         this.list = list;
+        this.filterList = list;
     }
 
     @NonNull
@@ -45,7 +56,7 @@ public class manageTenantAdapter extends RecyclerView.Adapter<manageTenantAdapte
     @Override
     public void onBindViewHolder(@NonNull managetenantViewHolder holder, int position) {
 
-        final tenantInfo item = list.get(position);
+        final tenantInfo item = filterList.get(position);
 
         holder.name.setText(item.getName());
         holder.flatNo.setText(item.getAddress());
@@ -78,18 +89,17 @@ public class manageTenantAdapter extends RecyclerView.Adapter<manageTenantAdapte
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,_26_View_nid.class);
-
+                intent.putExtra("phoneNumber",item.getPhone_no());
                 context.startActivity(intent);
             }
         });
-
 
 
     }
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return filterList.size();
     }
 
     public class managetenantViewHolder extends RecyclerView.ViewHolder {
@@ -110,4 +120,38 @@ public class manageTenantAdapter extends RecyclerView.Adapter<manageTenantAdapte
 
         }
     }
+
+
+    public Filter getFilter(){
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence charSequence) {
+                String key = charSequence.toString();
+                if(key.isEmpty()){
+                    filterList = list;
+                }else {
+                    List<tenantInfo> listFilter = new ArrayList<>();
+                    for(tenantInfo row: list){
+                        if(row.getName().toLowerCase().contains(key.toLowerCase())){
+                            listFilter.add(row);
+                        }
+                    }
+                    filterList = listFilter;
+                }
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = filterList;
+                return filterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults filterResults) {
+
+                filterList = (List<tenantInfo>)filterResults.values;
+                notifyDataSetChanged();
+            }
+        };
+    }
+
+
 }

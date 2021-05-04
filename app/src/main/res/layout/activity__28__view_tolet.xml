@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="._28_View_tolet"
+    android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:id="@+id/search_home"
+        android:hint="Search"
+        android:padding="10dp"
+        android:background="@drawable/search_bg"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:drawableLeft="@drawable/ic_search"/>
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical">
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Apartment For Rent"
+           android:gravity="center"
+           android:textSize="20sp"
+           android:textColor="@color/colorBlack"
+           android:textStyle="bold"
+           android:layout_marginTop="16dp"/>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1.4dp"
+           android:layout_marginVertical="8dp"
+           android:background="#c1c1c1"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/rentApartment28"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           android:nestedScrollingEnabled="false"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:id="@+id/rentNoData">
+           <include layout="@layout/no_data_found"/>
+
+       </LinearLayout>
+
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Apartment For Sell"
+           android:gravity="center"
+           android:textSize="20sp"
+           android:textColor="@color/colorBlack"
+           android:textStyle="bold"
+           android:layout_marginTop="16dp"/>
+
+       <View
+           android:layout_width="match_parent"
+           android:layout_height="1.4dp"
+           android:layout_marginVertical="8dp"
+           android:background="#c1c1c1"/>
+
+       <androidx.recyclerview.widget.RecyclerView
+           android:id="@+id/sellApartment28"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           android:nestedScrollingEnabled="false"/>
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="vertical"
+           android:id="@+id/sellNoData">
+           <include layout="@layout/no_data_found"/>
+
+       </LinearLayout>
+
+
+   </LinearLayout>
+
+</LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

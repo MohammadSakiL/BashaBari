@@ -125,7 +125,7 @@ public class _22_Upload_nid extends AppCompatActivity {
             public void onSuccess(Void aVoid) {
                 FancyToast.makeText(_22_Upload_nid.this, "Successfully upload", Toast.LENGTH_SHORT, FancyToast.SUCCESS, true).show();
                 pd.dismiss();
-                Intent intent = new Intent(_22_Upload_nid.this,_5OwnerMenu.class);
+                Intent intent = new Intent(_22_Upload_nid.this,_6_User_menu.class);
                 startActivity(intent);
 
 

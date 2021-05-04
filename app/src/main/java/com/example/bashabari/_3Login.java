@@ -43,7 +43,7 @@ public class _3Login extends AppCompatActivity {
     private EditText edtPhoneNumber3, edtPassword3;
     private CheckBox loginAsOwner3;
     private Button btnLogin3;
-    private TextView txtRegister3;
+    private TextView txtRegister3,viewTolet;
     private DatabaseReference ownerReference;
     private DatabaseReference tenantReference;
 
@@ -56,6 +56,7 @@ public class _3Login extends AppCompatActivity {
         txtRegister3 = findViewById(R.id.txtRegister3);
         loginAsOwner3 = findViewById(R.id.loginAsOwner3);
         btnLogin3 = findViewById(R.id.btnLogin3);
+        viewTolet = findViewById(R.id.viewTolet3);
 
         ownerReference = FirebaseDatabase.getInstance().getReference("Owner Database");
         tenantReference = FirebaseDatabase.getInstance().getReference("Tenant Database");
@@ -127,6 +128,15 @@ public class _3Login extends AppCompatActivity {
         } catch (Exception e) {
 
         }
+
+        viewTolet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(_3Login.this,_28_View_tolet.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void tenantLogin(final String getPhone_no, final String getPassword) {

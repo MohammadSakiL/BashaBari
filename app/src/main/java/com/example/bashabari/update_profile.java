@@ -297,7 +297,11 @@ public class update_profile extends AppCompatActivity {
 
 
         } else {
-            uploadImage();
+            try {
+                uploadImage();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
     }

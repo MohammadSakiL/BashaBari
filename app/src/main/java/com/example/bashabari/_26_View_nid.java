@@ -23,7 +23,8 @@ import java.io.InputStreamReader;
 public class _26_View_nid extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
-    private ImageView nidImage;
+    private ImageView nidImage,back_arrow;
+    private String PHONENUMBER;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,8 +32,11 @@ public class _26_View_nid extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference().child("Nid Image");
         nidImage = findViewById(R.id.nidImage26);
+        back_arrow = findViewById(R.id.back_arrow_btn_26);
 
-        retriveImage(readFromFile("111pho111.txt").trim());
+        PHONENUMBER = getIntent().getStringExtra("phoneNumber");
+
+        retriveImage(PHONENUMBER);
     }
 
     private void retriveImage(final String phone_no) {
@@ -48,7 +52,7 @@ public class _26_View_nid extends AppCompatActivity {
                             e.printStackTrace();
                         }
                     }else {
-                        FancyToast.makeText(_26_View_nid.this, "Spmething went wrong", Toast.LENGTH_SHORT, FancyToast.INFO, true).show();
+                        FancyToast.makeText(_26_View_nid.this, "Something went wrong", Toast.LENGTH_SHORT, FancyToast.INFO, true).show();
 
                     }
                 } catch (Exception e) {
@@ -63,33 +67,5 @@ public class _26_View_nid extends AppCompatActivity {
         });
     }
 
-    private String readFromFile(String File_Name) {
-        String st = null;
-        FileInputStream fis0 = null;
-        try {
-            fis0 = openFileInput(File_Name);
-            InputStreamReader isr = new InputStreamReader(fis0);
-            BufferedReader br = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String text;
 
-            while ((text = br.readLine()) != null) {
-                sb.append(text).append("\n");
-            }
-
-            st = sb.toString();
-
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            if (fis0 != null) {
-                try {
-                    fis0.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return st;
-    }
 }

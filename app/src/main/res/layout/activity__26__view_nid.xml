@@ -14,7 +14,7 @@
         android:padding="35sp">
 
         <ImageView
-            android:id="@+id/back_arrow_btn_11"
+            android:id="@+id/back_arrow_btn_26"
             android:layout_width="50sp"
             android:layout_height="50sp"
             android:src="@drawable/back_button" />
