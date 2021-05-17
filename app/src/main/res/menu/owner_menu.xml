@@ -7,10 +7,7 @@
             android:id="@+id/nav_home"
             android:title="Profile"
             android:icon="@drawable/name_icon"/>
-        <item
-            android:id="@+id/nav_send_bill"
-            android:title="Send Bill"
-            android:icon="@drawable/ic_bill"/>
+
 
         <item
             android:id="@+id/nav_notice"
@@ -24,6 +21,10 @@
             android:id="@+id/nav_add_tenant"
             android:title="Add Tenants"
             android:icon="@drawable/add_tenant_icon"/>
+        <item
+            android:id="@+id/nav_send_bill"
+            android:title="Send Bill"
+            android:icon="@drawable/ic_bill"/>
 
         <item
             android:id="@+id/nav_manage_tenant"
@@ -32,7 +33,7 @@
 
         <item
             android:id="@+id/nav_tolet"
-            android:title="Post tolet"
+            android:title="Post Tolet"
             android:icon="@drawable/ic_tolet"/>
 
 

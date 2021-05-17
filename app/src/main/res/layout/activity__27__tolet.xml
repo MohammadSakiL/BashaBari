@@ -63,81 +63,79 @@
                 android:id="@+id/spntype27"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
-                android:spinnerMode="dropdown"
+                android:layout_marginVertical="16dp"
                 android:background="@android:drawable/btn_dropdown"
                 android:gravity="center"
-                android:layout_marginVertical="16dp"
-                android:outlineAmbientShadowColor="@color/colorPrimary"/>
+                android:outlineAmbientShadowColor="@color/colorPrimary"
+                android:spinnerMode="dropdown" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginBottom="2dp"
                 android:text="Sell/Monthly Rent"
                 android:textColor="@color/colorBlack"
-                android:layout_marginBottom="2dp"/>
+                android:textSize="20sp" />
+
             <EditText
                 android:id="@+id/edtRent27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/edit_text_background"
+                android:padding="10dp"
 
 
                 />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginBottom="2dp"
                 android:text="Flat no."
                 android:textColor="@color/colorBlack"
-                android:layout_marginBottom="2dp"/>
+                android:textSize="20sp" />
 
 
             <EditText
                 android:id="@+id/edtFlatNo27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_text_background"
-                />
+                android:padding="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginBottom="2dp"
                 android:text="Location"
                 android:textColor="@color/colorBlack"
-                android:layout_marginBottom="2dp"/>
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtLocation27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_text_background"
-                />
+                android:padding="10dp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:layout_marginBottom="2dp"
                 android:text="Contact number"
                 android:textColor="@color/colorBlack"
-                android:layout_marginBottom="2dp"/>
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/edtPhoneNumber27"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
                 android:layout_marginBottom="20dp"
                 android:background="@drawable/edit_text_background"
-                />
-
+                android:padding="10dp" />
 
 
             <LinearLayout
@@ -150,19 +148,19 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginRight="10dp">
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1">
 
                     <Button
                         android:id="@+id/btnHome27"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Home"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/button_background"
+                        android:text="Home"
+                        android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
 
                         />
 
@@ -171,32 +169,26 @@
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="10dp">
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1">
 
                     <Button
                         android:id="@+id/btnPost27"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Post"
-                        android:textAllCaps="false"
-                        android:textStyle="bold"
                         android:layout_marginBottom="20dp"
                         android:background="@drawable/button_background"
+                        android:text="Post"
+                        android:textAllCaps="false"
                         android:textColor="@color/colorWhite"
+                        android:textStyle="bold"
 
                         />
 
                 </LinearLayout>
 
 
-
             </LinearLayout>
-
-
-
-
-
 
 
         </LinearLayout>

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="._28_View_tolet"></activity>
+        <activity android:name="._Tenant_list_Send_Bill"></activity>
+        <activity android:name="._28_View_tolet" />
         <activity android:name="._27_Tolet" />
         <activity android:name="._26_View_nid" />
         <activity android:name="._25_Tenant_list" />
