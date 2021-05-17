@@ -166,7 +166,7 @@ public class _3Login extends AppCompatActivity {
 
                         }
                     } catch (Exception e) {
-                        FancyToast.makeText(_3Login.this, "Invalid phone number or password 2", Toast.LENGTH_LONG, FancyToast.ERROR, true).show();
+                        FancyToast.makeText(_3Login.this, "Something went wrong", Toast.LENGTH_LONG, FancyToast.ERROR, true).show();
                     }
                 }
 
@@ -208,7 +208,7 @@ public class _3Login extends AppCompatActivity {
 
                         }
                     } catch (Exception e) {
-                        FancyToast.makeText(_3Login.this, "Invalid Phone Number or Password2", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
+                        FancyToast.makeText(_3Login.this, "Something went wrong", Toast.LENGTH_SHORT, FancyToast.ERROR, true).show();
 
 
                     }
